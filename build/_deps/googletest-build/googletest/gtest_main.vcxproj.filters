@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Final - Projects\Chess Engine\build\_deps\googletest-src\googletest\src\gtest_main.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Final - Projects\Chess Engine\build\_deps\googletest-src\googletest\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6C29088A-A648-30A5-8064-B4E156E7C960}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Final - Projects/Chess Engine/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
+		},
+		{
+			"file" : "D:/Final - Projects/Chess Engine/build/_deps/googletest-subbuild/CMakeFiles/0dd949ed9a856965cd2e751e7d8905fb/googletest-populate.rule"
+		},
+		{
+			"file" : "D:/Final - Projects/Chess Engine/build/_deps/googletest-subbuild/CMakeFiles/8854f17cd0abcef74728fd8d414666a0/googletest-populate-complete.rule"
+		},
+		{
+			"file" : "D:/Final - Projects/Chess Engine/build/_deps/googletest-subbuild/CMakeFiles/ef1c788cc52b941e555a5d23d5ffd625/googletest-populate-build.rule"
+		},
+		{
+			"file" : "D:/Final - Projects/Chess Engine/build/_deps/googletest-subbuild/CMakeFiles/ef1c788cc52b941e555a5d23d5ffd625/googletest-populate-configure.rule"
+		},
+		{
+			"file" : "D:/Final - Projects/Chess Engine/build/_deps/googletest-subbuild/CMakeFiles/ef1c788cc52b941e555a5d23d5ffd625/googletest-populate-download.rule"
+		},
+		{
+			"file" : "D:/Final - Projects/Chess Engine/build/_deps/googletest-subbuild/CMakeFiles/ef1c788cc52b941e555a5d23d5ffd625/googletest-populate-install.rule"
+		},
+		{
+			"file" : "D:/Final - Projects/Chess Engine/build/_deps/googletest-subbuild/CMakeFiles/ef1c788cc52b941e555a5d23d5ffd625/googletest-populate-mkdir.rule"
+		},
+		{
+			"file" : "D:/Final - Projects/Chess Engine/build/_deps/googletest-subbuild/CMakeFiles/ef1c788cc52b941e555a5d23d5ffd625/googletest-populate-patch.rule"
+		},
+		{
+			"file" : "D:/Final - Projects/Chess Engine/build/_deps/googletest-subbuild/CMakeFiles/ef1c788cc52b941e555a5d23d5ffd625/googletest-populate-test.rule"
+		},
+		{
+			"file" : "D:/Final - Projects/Chess Engine/build/_deps/googletest-subbuild/CMakeFiles/ef1c788cc52b941e555a5d23d5ffd625/googletest-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest-populate"
+		],
+		"name" : "googletest-populate"
+	}
+}

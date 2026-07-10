@@ -1,0 +1,341 @@
+Milestone 8 – UCI Protocol, GUI Integration & Engine Interface
+
+Milestone 7 is complete.
+
+The engine now supports:
+
+- Complete move generation
+- Classical search
+- Advanced search optimizations
+- Advanced positional evaluation
+- Benchmarking
+- Tournament framework
+- Self-play
+- Automatic tuning
+- Opening framework
+- Endgame framework
+- Analysis tools
+
+The engine is now mature enough to expose a standard chess engine interface.
+
+Do NOT rewrite working search or evaluation code unless required.
+
+==================================================
+OBJECTIVE
+==================================================
+
+Implement complete UCI (Universal Chess Interface) support.
+
+The engine should become compatible with major chess GUIs and tools.
+
+The implementation should follow the official UCI specification.
+
+==================================================
+PART 1
+UCI ENGINE
+==================================================
+
+Create a dedicated UCI module.
+
+Suggested structure:
+
+uci/
+    uci.hpp
+    uci.cpp
+    command_parser.cpp
+    command_dispatcher.cpp
+    option_manager.cpp
+
+Keep all protocol handling isolated from engine logic.
+
+==================================================
+PART 2
+SUPPORTED COMMANDS
+==================================================
+
+Implement:
+
+uci
+
+isready
+
+ucinewgame
+
+position
+
+go
+
+stop
+
+quit
+
+ponderhit
+
+setoption
+
+debug
+
+register
+
+uciok
+
+readyok
+
+==================================================
+PART 3
+POSITION HANDLING
+==================================================
+
+Support:
+
+startpos
+
+FEN
+
+Move list parsing
+
+Position reconstruction
+
+Correct synchronization with internal board state.
+
+==================================================
+PART 4
+GO COMMAND
+==================================================
+
+Support:
+
+depth
+
+movetime
+
+wtime
+
+btime
+
+winc
+
+binc
+
+movestogo
+
+nodes
+
+mate
+
+infinite
+
+searchmoves
+
+Implement proper interaction with the existing Time Manager.
+
+==================================================
+PART 5
+SEARCH OUTPUT
+==================================================
+
+Output standard UCI info:
+
+depth
+
+seldepth
+
+score cp
+
+score mate
+
+nodes
+
+nps
+
+time
+
+pv
+
+hashfull
+
+tbhits
+
+currmove
+
+currmovenumber
+
+==================================================
+PART 6
+ENGINE OPTIONS
+==================================================
+
+Support configurable options.
+
+Examples:
+
+Hash Size
+
+Threads
+
+Move Overhead
+
+OwnBook
+
+Ponder
+
+Skill Level
+
+Contempt
+
+Future options should be easy to register.
+
+==================================================
+PART 7
+MULTI PV
+==================================================
+
+Support MultiPV.
+
+Allow the engine to return multiple principal variations.
+
+Configurable through UCI options.
+
+==================================================
+PART 8
+PONDERING
+==================================================
+
+Prepare infrastructure for pondering.
+
+Support:
+
+ponder
+
+ponderhit
+
+Even if advanced pondering is incomplete, the architecture should support future expansion.
+
+==================================================
+PART 9
+GUI COMPATIBILITY
+==================================================
+
+Verify compatibility with:
+
+Arena
+
+Cute Chess
+
+Banksia GUI
+
+ChessBase-compatible UCI clients
+
+The engine should load without protocol errors.
+
+==================================================
+PART 10
+ENGINE IDENTIFICATION
+==================================================
+
+Return:
+
+Engine Name
+
+Version
+
+Author
+
+Supported options
+
+Protocol version
+
+==================================================
+PART 11
+LOGGING
+==================================================
+
+Optional debug logging.
+
+Allow:
+
+Protocol logging
+
+Search logging
+
+Error logging
+
+Debug mode
+
+Logs should not affect performance when disabled.
+
+==================================================
+PART 12
+TESTING
+==================================================
+
+Create automated UCI tests.
+
+Verify:
+
+Command parsing
+
+Position loading
+
+Search commands
+
+Time management
+
+Best move output
+
+Protocol compliance
+
+Regression tests
+
+==================================================
+PART 13
+BENCHMARKS
+==================================================
+
+Measure:
+
+Startup time
+
+UCI latency
+
+Move response time
+
+Search latency
+
+Memory usage
+
+Protocol overhead
+
+==================================================
+DO NOT IMPLEMENT
+==================================================
+
+Do NOT implement:
+
+GUI
+
+Frontend
+
+Database
+
+REST APIs
+
+Neural Networks
+
+NNUE
+
+Cloud Infrastructure
+
+Explainable AI
+
+Adaptive Coaching
+
+Those belong to future milestones.
+
+==================================================
+DELIVERABLE
+==================================================
+
+At the end of this milestone the engine should be fully compatible with the Universal Chess Interface specification and usable inside standard chess GUIs such as Arena, Cute Chess, and Banksia GUI.
+
+The engine should support complete UCI communication, configurable options, MultiPV, and proper time-controlled search using the existing engine architecture.

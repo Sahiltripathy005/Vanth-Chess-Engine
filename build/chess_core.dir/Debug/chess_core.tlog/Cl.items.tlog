@@ -1,0 +1,6 @@
+D:\Final - Projects\Chess Engine\src\board\board.cpp;D:\Final - Projects\Chess Engine\build\chess_core.dir\Debug\board.obj
+D:\Final - Projects\Chess Engine\src\board\fen.cpp;D:\Final - Projects\Chess Engine\build\chess_core.dir\Debug\fen.obj
+D:\Final - Projects\Chess Engine\src\moves\move.cpp;D:\Final - Projects\Chess Engine\build\chess_core.dir\Debug\move.obj
+D:\Final - Projects\Chess Engine\src\moves\move_generator.cpp;D:\Final - Projects\Chess Engine\build\chess_core.dir\Debug\move_generator.obj
+D:\Final - Projects\Chess Engine\src\pieces\piece.cpp;D:\Final - Projects\Chess Engine\build\chess_core.dir\Debug\piece.obj
+D:\Final - Projects\Chess Engine\src\pieces\square.cpp;D:\Final - Projects\Chess Engine\build\chess_core.dir\Debug\square.obj

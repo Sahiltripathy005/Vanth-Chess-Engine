@@ -1,0 +1,6 @@
+date,commit_hash,config_name,depth,time_ms,nodes,nps,cutoffs,tt_hits,tt_lookups,branching_factor,move_ordering_efficiency,memory_usage_kb,best_move,evaluation
+2026-07-11 00:54:55,local_dev,default,1,10,43,4300,0,0,22,43.0000,0.00,20356,b1c3,100
+2026-07-11 00:54:55,local_dev,default,2,3,148,49333,19,1,85,12.1655,89.47,20452,b1c3,16
+2026-07-11 00:54:55,local_dev,default,3,7,429,61285,67,2,271,7.5420,86.57,20452,b1a3,13
+2026-07-11 00:54:55,local_dev,default,4,25,1229,49160,145,19,846,5.9209,80.69,20460,b1c3,204
+2026-07-11 00:54:55,local_dev,default,5,74,3395,45878,355,119,2159,5.0836,84.51,20464,g1f3,89
