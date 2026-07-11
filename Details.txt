@@ -1,341 +1,718 @@
-Milestone 8 – UCI Protocol, GUI Integration & Engine Interface
+# Vanth Chess Engine — Version 3.5.1
+# Professional Engine Validation, Benchmark & Optimization Suite
 
-Milestone 7 is complete.
+You are continuing development of the Vanth Chess Engine.
 
-The engine now supports:
+IMPORTANT
 
-- Complete move generation
-- Classical search
-- Advanced search optimizations
-- Advanced positional evaluation
-- Benchmarking
-- Tournament framework
-- Self-play
-- Automatic tuning
-- Opening framework
-- Endgame framework
-- Analysis tools
+This milestone follows Version 3.5 (Engine Rating, Tournament & Elo Laboratory).
 
-The engine is now mature enough to expose a standard chess engine interface.
+DO NOT implement new search heuristics.
 
-Do NOT rewrite working search or evaluation code unless required.
+DO NOT modify evaluation weights.
 
-==================================================
-OBJECTIVE
-==================================================
+DO NOT optimize search.
 
-Implement complete UCI (Universal Chess Interface) support.
+Instead, build a professional validation framework that allows every future optimization to be measured scientifically.
 
-The engine should become compatible with major chess GUIs and tools.
+Every future engine modification must pass this suite before being accepted.
 
-The implementation should follow the official UCI specification.
+====================================================================
+PRIMARY OBJECTIVE
+====================================================================
 
-==================================================
-PART 1
-UCI ENGINE
-==================================================
+Transform Vanth into a professionally testable chess engine.
 
-Create a dedicated UCI module.
+Every engine subsystem should be independently verifiable.
 
-Suggested structure:
+Every future optimization should be measurable.
 
-uci/
-    uci.hpp
-    uci.cpp
-    command_parser.cpp
-    command_dispatcher.cpp
-    option_manager.cpp
+Every regression should immediately fail automated testing.
 
-Keep all protocol handling isolated from engine logic.
+====================================================================
+MODULE 1
+TACTICAL TEST SUITE
+====================================================================
 
-==================================================
-PART 2
-SUPPORTED COMMANDS
-==================================================
+Create a large tactical benchmark suite.
 
-Implement:
+Support categories
 
-uci
+Mate in 1
 
-isready
+Mate in 2
 
-ucinewgame
+Mate in 3
 
-position
+Mate in 4
 
-go
+Forks
 
-stop
+Pins
 
-quit
+Skewers
 
-ponderhit
+Double Attacks
 
-setoption
+Discovered Attacks
 
-debug
+Back Rank Mate
 
-register
+Smothered Mate
 
-uciok
+Deflection
 
-readyok
+Decoy
 
-==================================================
-PART 3
-POSITION HANDLING
-==================================================
+Clearance
 
-Support:
+Zwischenzug
 
-startpos
+X-Ray
+
+Overloaded Pieces
+
+Promotion Tactics
+
+Remove the Defender
+
+Sacrifices
+
+Greek Gift
+
+Windmill
+
+Interference
+
+Perpetual Check
+
+For every test store
 
 FEN
 
-Move list parsing
+Expected Best Move
 
-Position reconstruction
+Expected Score Range
 
-Correct synchronization with internal board state.
+Expected PV
 
-==================================================
-PART 4
-GO COMMAND
-==================================================
+Maximum Solve Depth
 
-Support:
+Search Time
 
-depth
+Verification Status
 
-movetime
+====================================================================
+MODULE 2
+STRATEGIC TEST SUITE
+====================================================================
 
-wtime
+Create strategic benchmark positions.
 
-btime
+Categories
 
-winc
+Passed Pawns
 
-binc
+Isolated Pawns
 
-movestogo
+Backward Pawns
 
-nodes
+Doubled Pawns
 
-mate
+Pawn Majorities
 
-infinite
+Outposts
 
-searchmoves
+Weak Squares
 
-Implement proper interaction with the existing Time Manager.
+Open Files
 
-==================================================
-PART 5
-SEARCH OUTPUT
-==================================================
+Bishop Pair
 
-Output standard UCI info:
+Knight vs Bishop
 
-depth
+King Activity
 
-seldepth
+Space Advantage
 
-score cp
+Minor Piece Activity
 
-score mate
+Exchange Sacrifices
 
-nodes
+Closed Positions
 
-nps
+Open Positions
 
-time
+Store
 
-pv
+Expected Evaluation Range
 
-hashfull
+Best Move
 
-tbhits
+PV
 
-currmove
+====================================================================
+MODULE 3
+ENDGAME TEST SUITE
+====================================================================
 
-currmovenumber
+Implement endgame validation.
 
-==================================================
-PART 6
-ENGINE OPTIONS
-==================================================
+Include
 
-Support configurable options.
+KPK
 
-Examples:
+KQK
 
-Hash Size
+KRK
 
-Threads
+KBBK
 
-Move Overhead
+KBNK
 
-OwnBook
+Lucena
 
-Ponder
+Philidor
 
-Skill Level
+Opposition
 
-Contempt
+Triangulation
 
-Future options should be easy to register.
+Fortresses
 
-==================================================
-PART 7
-MULTI PV
-==================================================
+Stalemates
 
-Support MultiPV.
+Draw by Insufficient Material
 
-Allow the engine to return multiple principal variations.
+Expected
 
-Configurable through UCI options.
+Best Move
 
-==================================================
-PART 8
-PONDERING
-==================================================
+Evaluation
 
-Prepare infrastructure for pondering.
+Mate Distance
 
-Support:
+====================================================================
+MODULE 4
+OPENING SANITY SUITE
+====================================================================
 
-ponder
+Verify opening play.
 
-ponderhit
+Include
 
-Even if advanced pondering is incomplete, the architecture should support future expansion.
+Italian
 
-==================================================
-PART 9
-GUI COMPATIBILITY
-==================================================
+Ruy Lopez
 
-Verify compatibility with:
+Scotch
 
-Arena
+Sicilian
 
-Cute Chess
+French
 
-Banksia GUI
+Caro-Kann
 
-ChessBase-compatible UCI clients
+Pirc
 
-The engine should load without protocol errors.
+Modern
 
-==================================================
-PART 10
-ENGINE IDENTIFICATION
-==================================================
+Slav
 
-Return:
+Queen's Gambit
 
-Engine Name
+King's Indian
 
-Version
+Nimzo
 
-Author
+English
 
-Supported options
+Catalan
 
-Protocol version
+Verify
 
-==================================================
-PART 11
-LOGGING
-==================================================
+No obvious blunders
 
-Optional debug logging.
+Reasonable evaluation
 
-Allow:
+Stable PV
 
-Protocol logging
+====================================================================
+MODULE 5
+PERFT VALIDATION
+====================================================================
 
-Search logging
+Expand Perft suite.
 
-Error logging
+Include
 
-Debug mode
+Start Position
 
-Logs should not affect performance when disabled.
+Kiwipete
 
-==================================================
-PART 12
-TESTING
-==================================================
+Castling
 
-Create automated UCI tests.
+Promotions
 
-Verify:
+En Passant
 
-Command parsing
+Double Check
 
-Position loading
+Pinned Pieces
 
-Search commands
+Check Evasions
 
-Time management
+Known published Perft numbers
 
-Best move output
+Depth 1-6 where practical.
 
-Protocol compliance
+====================================================================
+MODULE 6
+SEARCH STABILITY TESTS
+====================================================================
 
-Regression tests
+For every benchmark position
 
-==================================================
-PART 13
-BENCHMARKS
-==================================================
+Run
 
-Measure:
+Depth
 
-Startup time
+1
 
-UCI latency
+2
 
-Move response time
+3
 
-Search latency
+4
 
-Memory usage
+5
 
-Protocol overhead
+6
 
-==================================================
-DO NOT IMPLEMENT
-==================================================
+8
 
-Do NOT implement:
+10
 
-GUI
+12
 
-Frontend
+15
 
-Database
+Store
 
-REST APIs
+Evaluation
 
-Neural Networks
+Best Move
 
-NNUE
+PV
 
-Cloud Infrastructure
+Nodes
+
+NPS
+
+Time
+
+Graph score evolution.
+
+Detect
+
+Large oscillations
+
+Search instability
+
+PV collapse
+
+Unexpected sign changes
+
+====================================================================
+MODULE 7
+ROOT MOVE ANALYSIS
+====================================================================
+
+Implement professional root move tracing.
+
+For every legal move print
+
+Move
+
+Score
+
+PV
+
+Nodes
+
+Ordering Rank
+
+TT Hit
+
+LMR Applied
+
+Null Move
+
+SEE
+
+History Score
+
+Sort moves by evaluation.
+
+====================================================================
+MODULE 8
+SEARCH HEURISTIC ISOLATION
+====================================================================
+
+Automatically benchmark every position with
+
+TT OFF
+
+TT ON
+
+QSearch OFF
+
+Null Move OFF
+
+LMR OFF
+
+Futility OFF
+
+PVS OFF
+
+Razoring OFF
+
+Aspiration OFF
+
+Produce comparison tables.
+
+Automatically identify
+
+Search heuristic causing evaluation divergence.
+
+====================================================================
+MODULE 9
+EVALUATION SYMMETRY TESTS
+====================================================================
+
+Mirror positions.
+
+Rotate colors.
+
+Verify
+
+Eval(position)
+
+≈
+
+-Eval(mirrored position)
+
+Verify
+
+Search
+
+Static Evaluation
 
 Explainable AI
 
-Adaptive Coaching
+Remain consistent.
 
-Those belong to future milestones.
+====================================================================
+MODULE 10
+SEARCH CONSISTENCY
+====================================================================
 
-==================================================
-DELIVERABLE
-==================================================
+For every benchmark verify
 
-At the end of this milestone the engine should be fully compatible with the Universal Chess Interface specification and usable inside standard chess GUIs such as Arena, Cute Chess, and Banksia GUI.
+Search never changes winning side unexpectedly.
 
-The engine should support complete UCI communication, configurable options, MultiPV, and proper time-controlled search using the existing engine architecture.
+Large score swings require explanation.
+
+Track
+
+Depth
+
+Score
+
+PV
+
+Mate Score
+
+====================================================================
+MODULE 11
+KNOWN ENGINE TEST SUITES
+====================================================================
+
+Support importing
+
+WAC
+
+Win At Chess
+
+ECM
+
+Bratko-Kopec
+
+BT2630
+
+STS
+
+LCT II
+
+EPD benchmark files
+
+Allow
+
+Run single suite
+
+Run all suites
+
+Generate summary.
+
+====================================================================
+MODULE 12
+BENCHMARK DASHBOARD
+====================================================================
+
+Generate JSON reports.
+
+Store
+
+Solved
+
+Failed
+
+Average Depth
+
+Average Nodes
+
+Average Time
+
+Average NPS
+
+PV Accuracy
+
+Score Stability
+
+Mate Detection Rate
+
+Category Breakdown
+
+====================================================================
+MODULE 13
+PERFORMANCE PROFILING
+====================================================================
+
+Measure
+
+Search Time
+
+Evaluation Time
+
+Move Generation
+
+Hash Lookups
+
+Hash Hit Rate
+
+Move Ordering
+
+LMR Usage
+
+Null Move Usage
+
+QSearch Nodes
+
+Branching Factor
+
+Average Cutoffs
+
+Average Extensions
+
+====================================================================
+MODULE 14
+RANDOM STRESS TESTING
+====================================================================
+
+Generate
+
+100,000+
+
+Random legal positions.
+
+Verify
+
+Legal moves
+
+Hash
+
+Undo
+
+Evaluation
+
+Search
+
+No crashes
+
+No illegal moves
+
+No inconsistent board states
+
+====================================================================
+MODULE 15
+REGRESSION FRAMEWORK
+====================================================================
+
+Every discovered bug becomes permanent.
+
+Store
+
+Bug ID
+
+Description
+
+FEN
+
+Expected Behaviour
+
+Expected Best Move
+
+Expected Evaluation
+
+Expected PV
+
+Never allow fixed bugs to reappear.
+
+====================================================================
+MODULE 16
+OPTIMIZATION GATEKEEPER
+====================================================================
+
+Every future optimization must automatically run
+
+Diagnostics
+
+Regression Tests
+
+Perft
+
+Tactical Suite
+
+Strategic Suite
+
+Endgame Suite
+
+Benchmark
+
+Tournament
+
+SPRT
+
+Elo Comparison
+
+Reject any optimization that
+
+Introduces bugs
+
+Fails benchmarks
+
+Reduces Elo
+
+Breaks regression tests
+
+====================================================================
+MODULE 17
+CI READY
+====================================================================
+
+Create one master command
+
+validate_engine
+
+Which executes
+
+Self Check
+
+Diagnostics
+
+Regression
+
+Perft
+
+Benchmarks
+
+Tactical Suite
+
+Strategic Suite
+
+Endgame Suite
+
+Random Stress
+
+Performance Report
+
+Rating Lab Sanity Check
+
+Generate one summary report.
+
+====================================================================
+MODULE 18
+DOCUMENTATION
+====================================================================
+
+Document
+
+Test Suite Architecture
+
+Benchmark Methodology
+
+Regression Policy
+
+Optimization Workflow
+
+Performance Metrics
+
+How to Add New Tests
+
+Developer Guidelines
+
+====================================================================
+FINAL OBJECTIVE
+====================================================================
+
+Vanth should have a professional engine validation laboratory comparable to modern engine development workflows.
+
+After this milestone, every future search optimization or evaluation improvement must follow this workflow:
+
+Code Change
+
+↓
+
+Run validate_engine
+
+↓
+
+Run Professional Benchmark Suite
+
+↓
+
+Run Regression Suite
+
+↓
+
+Run Tactical & Strategic Tests
+
+↓
+
+Run Engine Tournament
+
+↓
+
+Run SPRT
+
+↓
+
+Calculate Elo Difference
+
+↓
+
+Merge ONLY if stronger.
+
+No optimization should ever be accepted without objective validation.
+
+This milestone establishes the permanent scientific testing and optimization workflow for Vanth Chess Engine development.

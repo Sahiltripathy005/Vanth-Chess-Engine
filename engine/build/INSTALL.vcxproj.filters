@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Final - Projects\Chess Engine\engine\build\CMakeFiles\e2f405314250cb04fd1cedf01c57153b\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{FC044CE4-F5F0-3C4E-92E5-18EE56F80152}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

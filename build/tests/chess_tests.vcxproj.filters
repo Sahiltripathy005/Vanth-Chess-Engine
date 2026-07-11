@@ -28,6 +28,9 @@
     <ClCompile Include="D:\Final - Projects\Chess Engine\tests\test_milestone8.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Final - Projects\Chess Engine\tests\test_explainable_ai.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\Final - Projects\Chess Engine\tests\CMakeLists.txt" />

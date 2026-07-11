@@ -1,0 +1,4 @@
+FEN,Vanth Move,Stockfish Move,Vanth Eval,Stockfish Eval,Difference,Depth,Nodes,PV Agreement,Search Time
+"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",e2e3,d2d4,1.04,0.37,0.67,4,1843,0,73
+"r1bqk2r/pppp1ppp/2n2n2/4p3/1bB1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5",f3g5,f3g5,2.68,0.84,1.84,4,1534,1,72
+"r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",b1c3,f1b5,1.22,0.44,0.78,4,1577,0,61

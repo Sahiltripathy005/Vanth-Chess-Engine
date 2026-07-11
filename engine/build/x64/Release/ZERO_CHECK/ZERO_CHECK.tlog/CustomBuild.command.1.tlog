@@ -1,0 +1,10 @@
+^D:\FINAL - PROJECTS\CHESS ENGINE\ENGINE\BUILD\CMAKEFILES\E2F405314250CB04FD1CEDF01C57153B\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SD:/Final - Projects/Chess Engine/engine" "-BD:/Final - Projects/Chess Engine/engine/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/Final - Projects/Chess Engine/engine/build/ChessEngine.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

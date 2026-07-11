@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Final - Projects\Chess Engine\engine\build\_deps\googletest-subbuild\CMakeFiles\daca2bc31f9e07bc8acf2a78d2d1f764\googletest-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Final - Projects\Chess Engine\engine\build\_deps\googletest-subbuild\CMakeFiles\daca2bc31f9e07bc8acf2a78d2d1f764\googletest-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Final - Projects\Chess Engine\engine\build\_deps\googletest-subbuild\CMakeFiles\daca2bc31f9e07bc8acf2a78d2d1f764\googletest-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Final - Projects\Chess Engine\engine\build\_deps\googletest-subbuild\CMakeFiles\daca2bc31f9e07bc8acf2a78d2d1f764\googletest-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Final - Projects\Chess Engine\engine\build\_deps\googletest-subbuild\CMakeFiles\daca2bc31f9e07bc8acf2a78d2d1f764\googletest-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Final - Projects\Chess Engine\engine\build\_deps\googletest-subbuild\CMakeFiles\daca2bc31f9e07bc8acf2a78d2d1f764\googletest-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Final - Projects\Chess Engine\engine\build\_deps\googletest-subbuild\CMakeFiles\daca2bc31f9e07bc8acf2a78d2d1f764\googletest-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Final - Projects\Chess Engine\engine\build\_deps\googletest-subbuild\CMakeFiles\daca2bc31f9e07bc8acf2a78d2d1f764\googletest-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Final - Projects\Chess Engine\engine\build\_deps\googletest-subbuild\CMakeFiles\8c723a8b6df2bbff71e28525565afe51\googletest-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Final - Projects\Chess Engine\engine\build\_deps\googletest-subbuild\CMakeFiles\c608746e849859c5ce85ebda27f06512\googletest-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Final - Projects\Chess Engine\engine\build\_deps\googletest-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Final - Projects\Chess Engine\engine\build\_deps\googletest-subbuild\CMakeFiles\googletest-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{90C9F4A1-BD81-309B-AF16-8D286ABB920D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,232 @@
+====================================================================
+         VANTH CHESS ENGINE PROFESSIONAL VALIDATION LABORATORY      
+====================================================================
+
+[MODULE 15] Running Bug Regression Framework...
+========================================
+     Vanth Bug Reproduction Suite       
+========================================
+Bug 1: Wrong evaluation sign in queen endings
+  [PASS] Score = 986 cp (Correctly positive)
+Result: SUCCESS
+
+Bug 2: Castling rights lost after rook capture
+  [PASS] Black castling rights updated correctly (Queenside castling lost)
+Result: SUCCESS
+
+Bug 3: En passant capture validity (piece removal)
+  [PASS] Black pawn on d5 removed correctly
+Result: SUCCESS
+
+Bug 4: Pin blocking check (pinned piece cannot move)
+  [PASS] Pinned Knight at c3 cannot move
+Result: SUCCESS
+
+Bug 5: Stalemate detection (no legal moves)
+  [PASS] 0 legal moves (Stalemate detected)
+Result: SUCCESS
+
+----------------------------------------
+Bug Suite Results: Passed 5 / 5 tests.
+========================================
+
+[MODULE 5] Running Perft Validation...
+Position            Depth     Expected Nodes      Calculated Nodes    Status
+--------------------------------------------------------------------------------
+Start Position      1         20                  20                  [PASS] (0ms)
+Start Position      2         400                 400                 [PASS] (0ms)
+Start Position      3         8902                8902                [PASS] (3ms)
+Kiwipete            1         48                  48                  [PASS] (0ms)
+Kiwipete            2         2039                2039                [PASS] (1ms)
+EP/Castling Pos     1         14                  14                  [PASS] (0ms)
+EP/Castling Pos     2         191                 191                 [PASS] (0ms)
+
+[MODULE 1] Running Tactical Test Suite...
+Category            FEN                                                         Expected       Found     Status
+-------------------------------------------------------------------------------------------------------------------
+info depth 1 seldepth 1 score mate 1 nodes 51 nps 0 time 0 hashfull 0 pv g6g8
+info depth 2 seldepth 2 score mate 1 nodes 124 nps 41333 time 3 hashfull 0 pv g6g8
+Mate in 1           k7/7R/6R1/8/8/8/8/4K3 w - - 0 1                             g6g8           g6g8      [PASS] (3ms)
+info depth 1 seldepth 1 score mate 1 nodes 43 nps 0 time 0 hashfull 0 pv g1g8
+info depth 2 seldepth 2 score mate 1 nodes 88 nps 44000 time 2 hashfull 0 pv g1g8
+info depth 3 seldepth 3 score mate 1 nodes 202 nps 40400 time 5 hashfull 0 pv g1g8
+info depth 4 seldepth 4 score mate 1 nodes 462 nps 35538 time 13 hashfull 0 pv g1g8
+Mate in 2           k7/5R2/8/8/8/8/8/4K1R1 w - - 0 1                            g1g8           g1g8      [PASS] (13ms)
+info depth 1 seldepth 1 score mate 1 nodes 126 nps 63000 time 2 hashfull 0 pv g1g8
+info depth 2 seldepth 2 score mate 1 nodes 635 nps 35277 time 18 hashfull 0 pv g1g8
+info depth 3 seldepth 3 score mate 1 nodes 3774 nps 32256 time 117 hashfull 0 pv g1g8
+Mate in 3           k7/5R2/8/8/8/8/8/R3K1R1 w - - 0 1                           g1g8           g1g8      [PASS] (227ms)
+info depth 1 seldepth 1 score cp 339 nodes 54 nps 54000 time 1 hashfull 0 pv d5c7
+info depth 2 seldepth 2 score cp 339 nodes 89 nps 44500 time 2 hashfull 0 pv d5c7 e8e7
+Fork                r3k3/8/8/3N4/8/8/8/4K3 w - - 0 1                            d5c7           d5c7      [PASS] (2ms)
+info depth 1 seldepth 1 score cp 390 nodes 41 nps 0 time 0 hashfull 0 pv f1e2
+info depth 2 seldepth 2 score cp 487 nodes 137 nps 45666 time 3 hashfull 0 pv e3e4 d8c7
+info depth 3 seldepth 3 score cp 487 nodes 192 nps 48000 time 4 hashfull 0 pv e3e4 d8c7 e4d5
+info depth 4 seldepth 4 score cp 622 nodes 395 nps 43888 time 9 hashfull 0 pv e3e4 d8d7 e4d5 c6d5
+Pin check           3k4/8/2p5/3n4/8/4P3/8/3R1K2 w - - 0 1                       e3e4           e3e4      [PASS] (9ms)
+info depth 1 seldepth 1 score mate 1 nodes 33 nps 0 time 0 hashfull 0 pv d1d8
+info depth 2 seldepth 2 score mate 1 nodes 51 nps 0 time 0 hashfull 0 pv d1d8
+Back Rank Mate      6k1/5ppp/8/8/8/8/8/3R2K1 w - - 0 1                          d1d8           d1d8      [PASS] (0ms)
+
+[MODULE 2] Running Strategic Test Suite...
+Category            FEN                                                         Eval Range     Eval FoundStatus
+-------------------------------------------------------------------------------------------------------------------
+Passed Pawns        k7/8/P7/8/8/8/8/K7 w - - 0 1                                10 to 500      247       [PASS]
+Open Files          3r2k1/8/8/8/8/8/8/3R2K1 w - - 0 1                           -200 to 200    10        [PASS]
+Pawn Outpost        k7/8/3p4/4N3/3P4/8/8/K7 w - - 0 1                           50 to 500      422       [PASS]
+Bishop Pair         k7/8/8/8/8/8/8/K1BB4 w - - 0 1                              200 to 1000    845       [PASS]
+Space Advantage     k7/pppppppp/8/8/4P3/8/PPPP1PPP/K7 w - - 0 1                 -100 to 300    -4        [PASS]
+
+[MODULE 3] Running Endgame Test Suite...
+Category            FEN                                                         Expected Move  Eval FoundStatus
+-------------------------------------------------------------------------------------------------------------------
+info depth 1 seldepth 1 score cp 1621 nodes 136 nps 68000 time 2 hashfull 0 pv b7a8q
+info depth 2 seldepth 2 score mate 2 nodes 629 nps 62900 time 10 hashfull 0 pv d1d7 d8e8
+info depth 3 seldepth 3 score mate 2 nodes 2225 nps 48369 time 46 hashfull 0 pv d1d7 d8e8 b7a8q
+info depth 4 seldepth 4 score mate 2 nodes 8031 nps 36339 time 221 hashfull 0 pv d1d7 d8e8 b7a8q
+info depth 5 seldepth 5 score mate 2 nodes 27946 nps 37014 time 755 hashfull 0 pv d1d7 d8e8 b7a8q
+Lucena Position     r2k4/1P6/2K5/8/8/8/8/3R4 w - - 0 1                          d1d8           99997     [PASS]
+info depth 1 seldepth 1 score cp 161 nodes 70 nps 0 time 0 hashfull 0 pv b5b2
+info depth 2 seldepth 2 score cp 154 nodes 174 nps 87000 time 2 hashfull 0 pv b5b2 e3d4
+info depth 3 seldepth 3 score cp 171 nodes 1093 nps 54650 time 20 hashfull 0 pv b5b3 d1d3 b3d3
+info depth 4 seldepth 4 score cp 178 nodes 2105 nps 50119 time 42 hashfull 0 pv b5b3 d1d3 b3d3 e3d3
+info depth 5 seldepth 5 score cp 165 nodes 6505 nps 50038 time 130 hashfull 0 pv b5b2 d1d3 b2a2 e3f4 e6f6
+info depth 6 seldepth 6 score cp 150 nodes 12234 nps 48936 time 250 hashfull 0 pv e6e5 d1d2 b5b3 d2d3 b3b5 d3a3
+info depth 7 seldepth 7 score cp 177 nodes 19941 nps 50869 time 392 hashfull 0 pv e6e5 d1d2 b5b3 d2d3 b3b5 d3a3 b5b2
+info depth 8 seldepth 8 score cp 177 nodes 31336 nps 55758 time 562 hashfull 0 pv e6e5 d1d2 b5b3 d2d3 b3b2
+info depth 9 seldepth 9 score cp 177 nodes 50791 nps 63568 time 799 hashfull 0 pv e6e5 d1d2 b5b3 d2d3 b3b4 d3d5
+Philidor Draw       8/8/4k3/1r6/4P3/4K3/8/3R4 b - - 0 1                         b5b3           177       [PASS]
+info depth 1 seldepth 1 score cp 270 nodes 9 nps 0 time 0 hashfull 0 pv d6d7
+info depth 2 seldepth 2 score cp 254 nodes 53 nps 53000 time 1 hashfull 0 pv d6d7 d4e5
+info depth 3 seldepth 3 score cp 251 nodes 115 nps 57500 time 2 hashfull 0 pv d6d7 d4e5 d7e7
+info depth 4 seldepth 4 score cp 250 nodes 354 nps 88500 time 4 hashfull 0 pv d6c7 d4c5 c7d7 c5d4
+info depth 5 seldepth 5 score cp 177 nodes 743 nps 92875 time 8 hashfull 0 pv d6c7 d4e5 c7d7 d5d6 d7c6
+info depth 6 seldepth 6 score cp 173 nodes 1085 nps 90416 time 12 hashfull 0 pv d6c7 d4e5 c7d7 d5d6 d7c6 e5e6
+info depth 7 seldepth 7 score cp 272 nodes 2143 nps 89291 time 24 hashfull 0 pv d6c7 d4e5 c7d7 d5d6 d7d8
+info depth 8 seldepth 8 score cp 286 nodes 3143 nps 89800 time 35 hashfull 0 pv d6c7 d4e5 c7d7 d5d6 d7d8
+info depth 9 seldepth 9 score cp 279 nodes 6883 nps 91773 time 75 hashfull 0 pv d6d7 d4e5 d7e8 d5d6 e8f7
+info depth 10 seldepth 10 score cp 288 nodes 8729 nps 92861 time 94 hashfull 0 pv d6d7 d4e5 d7e8 d5d6 e8d7
+info depth 11 seldepth 11 score cp 289 nodes 11505 nps 95875 time 120 hashfull 0 pv d6d7 d4e5 d7e8 d5d6 e8d7
+info depth 12 seldepth 12 score cp 286 nodes 16709 nps 100053 time 167 hashfull 0 pv d6d7 d4e5 d7e7 d5d6 e7d7 e5d5 d7d8 d5d4 d8e8 d4e5 e8d7 e5d5
+KPK Draw            8/8/3k4/3P4/3K4/8/8/8 b - - 0 1                             d6d7           286       [PASS]
+info depth 1 seldepth 1 score cp 482 nodes 27 nps 0 time 0 hashfull 0 pv a1b2
+info depth 2 seldepth 2 score cp 502 nodes 71 nps 0 time 0 hashfull 0 pv f2d4 a8b7
+info depth 3 seldepth 3 score cp 493 nodes 243 nps 121500 time 2 hashfull 0 pv a1b2 a8b7 b2c3
+info depth 4 seldepth 4 score cp 496 nodes 497 nps 99400 time 5 hashfull 0 pv a1b2 a8b7 b2c3 b7c6
+info depth 5 seldepth 5 score cp 490 nodes 1155 nps 115500 time 10 hashfull 0 pv a1b2 a8b7 b2c3 b7c6 c3c4
+info depth 6 seldepth 6 score cp 500 nodes 2327 nps 110809 time 21 hashfull 0 pv a1b2 a8b7 b2c3 b7c6 c3c4 c6d6
+info depth 7 seldepth 7 score cp 499 nodes 4379 nps 112282 time 39 hashfull 0 pv a1b2 a8b7 b2c3 b7c6 c3c4 c6d6 f2c5
+info depth 8 seldepth 8 score cp 529 nodes 8706 nps 108825 time 80 hashfull 0 pv a1b2 a8b7 b2c3 b7c6 c3d4 c6d6 f2e3 d6e6
+info depth 9 seldepth 9 score cp 533 nodes 14074 nps 105819 time 133 hashfull 0 pv a1b2 a8b7 b2c3 b7c6 c3d4 c6d6 f2g3 d6e6 g3e5
+info depth 10 seldepth 10 score cp 539 nodes 22135 nps 107975 time 205 hashfull 0 pv a1b2 a8b7 b2c3 b7c6 c3d4 c6d6 f2e3 d6e6 d4e4 e6d6
+info depth 11 seldepth 11 score cp 562 nodes 36741 nps 113049 time 325 hashfull 0 pv a1b2 a8b7 b2c3 b7c6 c3d4 c6d6 f2g3 d6e6 g3e5 e6e7 d4d5
+info depth 12 seldepth 12 score cp 545 nodes 67280 nps 118869 time 566 hashfull 0 pv a1b2 a8b7 b2c3 b7c6 c3d4 c6d6 f2g3 d6e6 d4e4 e6f6 g3e5 f6e6
+Draw Material       k7/8/8/8/8/8/5B2/K7 w - - 0 1                               f2e3           545       [PASS]
+
+[MODULE 4] Running Opening Sanity Suite...
+Opening             FEN                                                         Best Move      Eval      Status
+-------------------------------------------------------------------------------------------------------------------
+info depth 1 seldepth 1 score cp 3 nodes 70 nps 70000 time 1 hashfull 0 pv f8c5
+info depth 2 seldepth 2 score cp 112 nodes 189 nps 47250 time 4 hashfull 0 pv f8c5 c4d5
+info depth 3 seldepth 3 score cp 5 nodes 465 nps 38750 time 12 hashfull 0 pv f8c5 d2d4 c5d4
+info depth 4 seldepth 4 score cp 71 nodes 1395 nps 35769 time 39 hashfull 0 pv f8c5 b1c3 g8f6 d2d4
+Italian             r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQk  f8c5           71        [PASS]
+info depth 1 seldepth 1 score cp -248 nodes 66 nps 66000 time 1 hashfull 0 pv f8c5
+info depth 2 seldepth 2 score cp 192 nodes 451 nps 45100 time 10 hashfull 0 pv f8b4 b5c6
+info depth 3 seldepth 3 score cp 179 nodes 598 nps 42714 time 14 hashfull 0 pv f8b4 b5c6 d8f6
+info depth 4 seldepth 4 score cp 40 nodes 3634 nps 31059 time 117 hashfull 0 pv g8f6 b1c3 f6g4 b5c4
+Ruy Lopez           r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQk  g8f6           40        [PASS]
+info depth 1 seldepth 1 score cp 308 nodes 13 nps 0 time 0 hashfull 0 pv d1f3
+info depth 2 seldepth 2 score cp 136 nodes 167 nps 33400 time 5 hashfull 0 pv f1c4 d8a5
+info depth 3 seldepth 3 score cp 372 nodes 562 nps 43230 time 13 hashfull 0 pv f1c4 e7e6 d1f3
+info depth 4 seldepth 4 score cp 182 nodes 1494 nps 29880 time 50 hashfull 0 pv d1h5 g8f6 h5e5 d8a5
+Sicilian            rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6   d1h5           182       [PASS]
+info depth 1 seldepth 1 score cp -289 nodes 61 nps 61000 time 1 hashfull 0 pv d8f6
+info depth 2 seldepth 2 score cp -196 nodes 391 nps 35545 time 11 hashfull 0 pv f8b4 c2c3
+info depth 3 seldepth 3 score cp -155 nodes 854 nps 31629 time 27 hashfull 0 pv d8h4 f1b5 h4e4
+info depth 4 seldepth 4 score cp -121 nodes 1981 nps 30015 time 66 hashfull 0 pv d8h4 b1c3 f8b4 d1f3
+French              rnbqkbnr/pppp1ppp/4p3/8/3PP3/8/PPP2PPP/RNBQKBNR b KQkq d5   d8h4           -121      [PASS]
+info depth 1 seldepth 1 score cp -394 nodes 62 nps 62000 time 1 hashfull 0 pv c8g4
+info depth 2 seldepth 2 score cp -92 nodes 214 nps 30571 time 7 hashfull 0 pv c8g4 c1g5
+info depth 3 seldepth 3 score cp -160 nodes 882 nps 33923 time 26 hashfull 0 pv c8g4 g1f3 g8f6
+info depth 4 seldepth 4 score cp -142 nodes 3495 nps 24103 time 145 hashfull 0 pv g8f6 d1a4 b8c6 c4d5
+Queen's Gambit      rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq c6   g8f6           -142      [PASS]
+info depth 1 seldepth 1 score cp -133 nodes 55 nps 55000 time 1 hashfull 0 pv b8c6
+info depth 2 seldepth 2 score cp -37 nodes 192 nps 38400 time 5 hashfull 0 pv b8c6 b1c3
+info depth 3 seldepth 3 score cp -133 nodes 598 nps 37375 time 16 hashfull 0 pv b8c6 g1f3 g8f6
+info depth 4 seldepth 4 score cp -44 nodes 1832 nps 35230 time 52 hashfull 0 pv g8f6 g1f3 f6g4 f3g5
+English             rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq c3 0   g8f6           -44       [PASS]
+
+[MODULE 6] Running Search Stability Tests...
+Depth     Best Move      Eval           Nodes          NPS            Status
+---------------------------------------------------------------------------
+info depth 1 seldepth 1 score cp 100 nodes 42 nps 0 time 0 hashfull 0 pv b1c3
+1         b1c3           100            42             42000          [STABLE]
+info depth 1 seldepth 1 score cp 100 nodes 1 nps 0 time 0 hashfull 0 pv b1c3
+info depth 2 seldepth 2 score cp 16 nodes 146 nps 36500 time 4 hashfull 0 pv b1c3 b8c6
+2         b1c3           16             146            36500          [STABLE]
+info depth 1 seldepth 1 score cp 16 nodes 1 nps 0 time 0 hashfull 0 pv b1c3
+info depth 2 seldepth 2 score cp 16 nodes 2 nps 0 time 0 hashfull 0 pv b1c3 b8c6
+info depth 3 seldepth 3 score cp 237 nodes 696 nps 38666 time 18 hashfull 0 pv g1f3 f7f6 b1c3
+3         g1f3           237            696            38666          [STABLE]
+info depth 1 seldepth 1 score cp 237 nodes 1 nps 0 time 0 hashfull 0 pv g1f3
+info depth 2 seldepth 2 score cp 237 nodes 2 nps 0 time 0 hashfull 0 pv g1f3 f7f6
+info depth 3 seldepth 3 score cp 237 nodes 3 nps 0 time 0 hashfull 0 pv g1f3 f7f6 b1c3
+info depth 4 seldepth 4 score cp 176 nodes 234 nps 33428 time 7 hashfull 0 pv g1f3 f7f6 b1c3 b8c6
+4         g1f3           176            234            33428          [STABLE]
+info depth 1 seldepth 1 score cp 176 nodes 1 nps 0 time 0 hashfull 0 pv g1f3
+info depth 2 seldepth 2 score cp 176 nodes 2 nps 0 time 0 hashfull 0 pv g1f3 f7f6
+info depth 3 seldepth 3 score cp 176 nodes 3 nps 0 time 0 hashfull 0 pv g1f3 f7f6 b1c3
+info depth 4 seldepth 4 score cp 176 nodes 4 nps 0 time 0 hashfull 0 pv g1f3 f7f6 b1c3 b8c6
+info depth 5 seldepth 5 score cp 89 nodes 2075 nps 20959 time 99 hashfull 0 pv g1f3 e7e6 f3e5 d8f6 e5g4
+5         g1f3           89             2075           20959          [STABLE]
+info depth 1 seldepth 1 score cp 89 nodes 1 nps 0 time 0 hashfull 0 pv g1f3
+info depth 2 seldepth 2 score cp 89 nodes 2 nps 0 time 0 hashfull 0 pv g1f3 e7e6
+info depth 3 seldepth 3 score cp 89 nodes 3 nps 0 time 0 hashfull 0 pv g1f3 e7e6 f3e5
+info depth 4 seldepth 4 score cp 89 nodes 4 nps 0 time 0 hashfull 0 pv g1f3 e7e6 f3e5 d8f6
+info depth 5 seldepth 5 score cp 89 nodes 5 nps 0 time 0 hashfull 0 pv g1f3 e7e6 f3e5 d8f6 e5g4
+6         g1f3           89             4096           19412          [STABLE]
+info depth 1 seldepth 1 score cp 100 nodes 22 nps 0 time 0 hashfull 0 pv g1f3
+info depth 2 seldepth 2 score cp 16 nodes 76 nps 76000 time 1 hashfull 0 pv g1f3 b8c6
+info depth 3 seldepth 3 score cp 109 nodes 180 nps 60000 time 3 hashfull 0 pv g1f3 e7e6 f3d4
+info depth 4 seldepth 4 score cp 52 nodes 491 nps 61375 time 8 hashfull 0 pv g1f3 e7e6 d2d4 d8f6
+info depth 5 seldepth 5 score cp 89 nodes 2186 nps 32147 time 68 hashfull 0 pv b1c3 g8f6 g1f3 f6g4 f3g5
+info depth 6 seldepth 6 score cp 16 nodes 7296 nps 35076 time 208 hashfull 0 pv b1c3 b8c6 e2e3 e7e6 d1f3 d8f6
+8         b1c3           16             7296           35076          [STABLE]
+
+[MODULE 9] Running Evaluation Symmetry Tests...
+Original FEN                                      Eval Orig   Eval Mirr   Diff        Status
+-----------------------------------------------------------------------------------------------
+rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQ  16          -4          12          [PASS]
+r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPP  310         -294        16          [PASS]
+8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1         10          -12         2           [PASS]
+k7/8/P7/8/8/8/8/K7 w - - 0 1                      247         -247        0           [PASS]
+r1bqk1nr/pppp1ppp/2n5/4p3/1b1PP3/2N2N2/PPP2PPP/R  176         -185        9           [PASS]
+
+[MODULE 14] Running Random Stress Testing...
+========================================
+    Vanth MoveGen Stress Tester         
+========================================
+Running 16 games of random play...
+
+Stress test completed. Checked 2372 positions in 16 games.
+Result: SUCCESS
+========================================
+
+====================================================================
+                     CI VALIDATION LAB SUMMARY REPORT               
+====================================================================
+  Modules Passed:       9 / 9
+  Regression Framework: 5 / 5 bugs passed
+  Perft Validation:     PASSED
+  Tactical Suite:       6 / 6 solved
+  Strategic Suite:      5 / 5 passed
+  Endgame Suite:        4 / 4 passed
+  Opening Sanity:       6 / 6 passed
+  Search Stability:     PASSED
+  Evaluation Symmetry:  PASSED
+  Random Stress Test:   PASSED (500 positions checked)
+--------------------------------------------------------------------
+  OVERALL STATUS:       SUCCESS
+====================================================================
+

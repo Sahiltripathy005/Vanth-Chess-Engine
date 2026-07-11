@@ -401,6 +401,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Final - Projects\Chess Engine\tests\test_milestone6.cpp" />
     <ClCompile Include="D:\Final - Projects\Chess Engine\tests\test_milestone7.cpp" />
     <ClCompile Include="D:\Final - Projects\Chess Engine\tests\test_milestone8.cpp" />
+    <ClCompile Include="D:\Final - Projects\Chess Engine\tests\test_explainable_ai.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,0 +1,551 @@
+[2026-07-11 10:55:34] =========================================================
+[2026-07-11 10:55:34] Starting Vanth vs Stockfish Comparison Harness
+[2026-07-11 10:55:34] =========================================================
+[2026-07-11 10:55:34] Vanth path: D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe
+[2026-07-11 10:55:34] Stockfish path: D:\requirements\Stockfish\stockfish\stockfish.exe
+[2026-07-11 10:55:34] No position specified. Defaulting to start position.
+[2026-07-11 10:55:34] Loaded 1 positions to evaluate.
+[2026-07-11 10:55:34] Initializing engines...
+[2026-07-11 10:55:34] Vanth started successfully.
+[2026-07-11 10:55:34] ERROR: Failed to start Stockfish at path: D:\requirements\Stockfish\stockfish\stockfish.exe
+[2026-07-11 10:55:34] ERROR: Failed to initialize comparison runner. Check paths and logs.
+[2026-07-11 10:55:51] =========================================================
+[2026-07-11 10:55:51] Starting Vanth vs Stockfish Comparison Harness
+[2026-07-11 10:55:51] =========================================================
+[2026-07-11 10:55:51] Vanth path: D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe
+[2026-07-11 10:55:51] Stockfish path: D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe
+[2026-07-11 10:55:51] No position specified. Defaulting to start position.
+[2026-07-11 10:55:51] Loaded 1 positions to evaluate.
+[2026-07-11 10:55:51] Initializing engines...
+[2026-07-11 10:55:51] Vanth started successfully.
+[2026-07-11 10:55:52] Stockfish started successfully.
+[2026-07-11 10:55:52] Comparing position: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+[2026-07-11 10:55:52] Running Vanth search...
+[2026-07-11 10:55:52] Running Stockfish search...
+[2026-07-11 10:55:52] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Available processors: 0-3
+[2026-07-11 10:55:52] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Using 1 thread
+[2026-07-11 10:55:52] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-c288c895ea92.nnue (125MiB, (102384, 1024, 15, 32, 1))
+[2026-07-11 10:55:52] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+[2026-07-11 10:55:52] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Network replica 1: Shared memory.
+[2026-07-11 10:55:52] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 1 seldepth 2 multipv 1 score cp -1 nodes 20 nps 1176 hashfull 0 tbhits 0 time 17 pv e2e4
+[2026-07-11 10:55:52] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 2 seldepth 3 multipv 1 score cp 27 nodes 48 nps 2666 hashfull 0 tbhits 0 time 18 pv e2e4
+[2026-07-11 10:55:52] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 3 seldepth 4 multipv 1 score cp 35 nodes 103 nps 5150 hashfull 0 tbhits 0 time 20 pv e2e4
+[2026-07-11 10:55:52] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 4 seldepth 5 multipv 1 score cp 37 nodes 258 nps 5265 hashfull 0 tbhits 0 time 49 pv d2d4
+[2026-07-11 10:55:52] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: bestmove d2d4
+[2026-07-11 10:55:52] WARNING: Vanth timed out or returned no move. Restarting process...
+[2026-07-11 10:55:52] Writing CSV results to: comparison_results.csv
+[2026-07-11 10:55:52] Comparison process finished successfully.
+[2026-07-11 10:57:32] =========================================================
+[2026-07-11 10:57:32] Starting Vanth vs Stockfish Comparison Harness
+[2026-07-11 10:57:32] =========================================================
+[2026-07-11 10:57:32] Vanth path: D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe
+[2026-07-11 10:57:32] Stockfish path: D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe
+[2026-07-11 10:57:32] No position specified. Defaulting to start position.
+[2026-07-11 10:57:32] Loaded 1 positions to evaluate.
+[2026-07-11 10:57:32] Initializing engines...
+[2026-07-11 10:57:33] Vanth started successfully.
+[2026-07-11 10:57:34] Stockfish started successfully.
+[2026-07-11 10:57:34] Comparing position: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+[2026-07-11 10:57:34] Running Vanth search...
+[2026-07-11 10:57:34] Running Stockfish search...
+[2026-07-11 10:57:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Available processors: 0-3
+[2026-07-11 10:57:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Using 1 thread
+[2026-07-11 10:57:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-c288c895ea92.nnue (125MiB, (102384, 1024, 15, 32, 1))
+[2026-07-11 10:57:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+[2026-07-11 10:57:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Network replica 1: Shared memory.
+[2026-07-11 10:57:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 1 seldepth 2 multipv 1 score cp -1 nodes 20 nps 2222 hashfull 0 tbhits 0 time 9 pv e2e4
+[2026-07-11 10:57:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 2 seldepth 3 multipv 1 score cp 27 nodes 48 nps 4800 hashfull 0 tbhits 0 time 10 pv e2e4
+[2026-07-11 10:57:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 3 seldepth 4 multipv 1 score cp 35 nodes 103 nps 10300 hashfull 0 tbhits 0 time 10 pv e2e4
+[2026-07-11 10:57:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 4 seldepth 5 multipv 1 score cp 37 nodes 258 nps 13578 hashfull 0 tbhits 0 time 19 pv d2d4
+[2026-07-11 10:57:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: bestmove d2d4
+[2026-07-11 10:57:34] WARNING: Vanth timed out or returned no move. Restarting process...
+[2026-07-11 10:57:34] Writing CSV results to: comparison_results.csv
+[2026-07-11 10:57:34] Comparison process finished successfully.
+[2026-07-11 10:58:39] =========================================================
+[2026-07-11 10:58:39] Starting Vanth vs Stockfish Comparison Harness
+[2026-07-11 10:58:39] =========================================================
+[2026-07-11 10:58:39] Vanth path: D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe
+[2026-07-11 10:58:39] Stockfish path: D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe
+[2026-07-11 10:58:39] No position specified. Defaulting to start position.
+[2026-07-11 10:58:39] Loaded 1 positions to evaluate.
+[2026-07-11 10:58:39] Initializing engines...
+[2026-07-11 10:58:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: id name Vanth Chess Engine
+[2026-07-11 10:58:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: id author Google Deepmind team
+[2026-07-11 10:58:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Contempt type spin default 0 min -100 max 100
+[2026-07-11 10:58:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Hash type spin default 16 min 1 max 2048
+[2026-07-11 10:58:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Move Overhead type spin default 10 min 0 max 5000
+[2026-07-11 10:58:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name MultiPV type spin default 1 min 1 max 256
+[2026-07-11 10:58:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name OwnBook type check default true
+[2026-07-11 10:58:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Ponder type check default false
+[2026-07-11 10:58:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Skill Level type spin default 20 min 0 max 20
+[2026-07-11 10:58:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Threads type spin default 1 min 1 max 64
+[2026-07-11 10:58:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: uciok
+[2026-07-11 10:58:39] Vanth started successfully.
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: Stockfish 18 by the Stockfish developers (see AUTHORS file)
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: id name Stockfish 18
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: id author the Stockfish developers (see AUTHORS file)
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: 
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Debug Log File type string default <empty>
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name NumaPolicy type string default auto
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Threads type spin default 1 min 1 max 1024
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Hash type spin default 16 min 1 max 33554432
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Clear Hash type button
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Ponder type check default false
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name MultiPV type spin default 1 min 1 max 256
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Skill Level type spin default 20 min 0 max 20
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Move Overhead type spin default 10 min 0 max 5000
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name nodestime type spin default 0 min 0 max 10000
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_Chess960 type check default false
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_LimitStrength type check default false
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_Elo type spin default 1320 min 1320 max 3190
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_ShowWDL type check default false
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyPath type string default <empty>
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyProbeDepth type spin default 1 min 1 max 100
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Syzygy50MoveRule type check default true
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyProbeLimit type spin default 7 min 0 max 7
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name EvalFile type string default nn-c288c895ea92.nnue
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name EvalFileSmall type string default nn-37f18f62d772.nnue
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: uciok
+[2026-07-11 10:58:40] Stockfish started successfully.
+[2026-07-11 10:58:40] Comparing position: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+[2026-07-11 10:58:40] Running Vanth search...
+[2026-07-11 10:58:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: 
+[2026-07-11 10:58:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: readyok
+[2026-07-11 10:58:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: 
+[2026-07-11 10:58:40] Running Stockfish search...
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: readyok
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Available processors: 0-3
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Using 1 thread
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-c288c895ea92.nnue (125MiB, (102384, 1024, 15, 32, 1))
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Network replica 1: Shared memory.
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 1 seldepth 2 multipv 1 score cp -1 nodes 20 nps 10000 hashfull 0 tbhits 0 time 2 pv e2e4
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 2 seldepth 3 multipv 1 score cp 27 nodes 48 nps 24000 hashfull 0 tbhits 0 time 2 pv e2e4
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 3 seldepth 4 multipv 1 score cp 35 nodes 103 nps 51500 hashfull 0 tbhits 0 time 2 pv e2e4
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 4 seldepth 5 multipv 1 score cp 37 nodes 258 nps 51600 hashfull 0 tbhits 0 time 5 pv d2d4
+[2026-07-11 10:58:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: bestmove d2d4
+[2026-07-11 10:58:40] WARNING: Vanth timed out or returned no move. Restarting process...
+[2026-07-11 10:58:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: id name Vanth Chess Engine
+[2026-07-11 10:58:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: id author Google Deepmind team
+[2026-07-11 10:58:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Contempt type spin default 0 min -100 max 100
+[2026-07-11 10:58:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Hash type spin default 16 min 1 max 2048
+[2026-07-11 10:58:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Move Overhead type spin default 10 min 0 max 5000
+[2026-07-11 10:58:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name MultiPV type spin default 1 min 1 max 256
+[2026-07-11 10:58:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name OwnBook type check default true
+[2026-07-11 10:58:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Ponder type check default false
+[2026-07-11 10:58:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Skill Level type spin default 20 min 0 max 20
+[2026-07-11 10:58:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Threads type spin default 1 min 1 max 64
+[2026-07-11 10:58:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: uciok
+[2026-07-11 10:58:40] Writing CSV results to: comparison_results.csv
+[2026-07-11 10:58:40] Comparison process finished successfully.
+[2026-07-11 10:59:38] =========================================================
+[2026-07-11 10:59:38] Starting Vanth vs Stockfish Comparison Harness
+[2026-07-11 10:59:38] =========================================================
+[2026-07-11 10:59:38] Vanth path: D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe
+[2026-07-11 10:59:38] Stockfish path: D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe
+[2026-07-11 10:59:38] No position specified. Defaulting to start position.
+[2026-07-11 10:59:38] Loaded 1 positions to evaluate.
+[2026-07-11 10:59:38] Initializing engines...
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: id name Vanth Chess Engine
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: id author Google Deepmind team
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Contempt type spin default 0 min -100 max 100
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Hash type spin default 16 min 1 max 2048
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Move Overhead type spin default 10 min 0 max 5000
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name MultiPV type spin default 1 min 1 max 256
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name OwnBook type check default true
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Ponder type check default false
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Skill Level type spin default 20 min 0 max 20
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Threads type spin default 1 min 1 max 64
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: uciok
+[2026-07-11 10:59:39] Vanth started successfully.
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: Stockfish 18 by the Stockfish developers (see AUTHORS file)
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: id name Stockfish 18
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: id author the Stockfish developers (see AUTHORS file)
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Debug Log File type string default <empty>
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name NumaPolicy type string default auto
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Threads type spin default 1 min 1 max 1024
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Hash type spin default 16 min 1 max 33554432
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Clear Hash type button
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Ponder type check default false
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name MultiPV type spin default 1 min 1 max 256
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Skill Level type spin default 20 min 0 max 20
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Move Overhead type spin default 10 min 0 max 5000
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name nodestime type spin default 0 min 0 max 10000
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_Chess960 type check default false
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_LimitStrength type check default false
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_Elo type spin default 1320 min 1320 max 3190
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_ShowWDL type check default false
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyPath type string default <empty>
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyProbeDepth type spin default 1 min 1 max 100
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Syzygy50MoveRule type check default true
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyProbeLimit type spin default 7 min 0 max 7
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name EvalFile type string default nn-c288c895ea92.nnue
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name EvalFileSmall type string default nn-37f18f62d772.nnue
+[2026-07-11 10:59:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: uciok
+[2026-07-11 10:59:39] Stockfish started successfully.
+[2026-07-11 10:59:39] Comparing position: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+[2026-07-11 10:59:39] Running Vanth search...
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: readyok
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 1 seldepth 1 score cp 100 nodes 43 nps 0 time 0 hashfull 0 pv b1c3
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 2 seldepth 2 score cp 16 nodes 190 nps 63333 time 3 hashfull 0 pv b1c3 b8c6
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 3 seldepth 3 score cp 237 nodes 765 nps 51000 time 15 hashfull 0 pv g1f3 f7f6 b1c3
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 4 seldepth 4 score cp 16 nodes 1734 nps 45631 time 38 hashfull 0 pv g1f3 b8c6 b1c3 g8f6
+[2026-07-11 10:59:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: bestmove g1f3 ponder b8c6
+[2026-07-11 10:59:39] Running Stockfish search...
+[2026-07-11 10:59:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: readyok
+[2026-07-11 10:59:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Available processors: 0-3
+[2026-07-11 10:59:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Using 1 thread
+[2026-07-11 10:59:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-c288c895ea92.nnue (125MiB, (102384, 1024, 15, 32, 1))
+[2026-07-11 10:59:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+[2026-07-11 10:59:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Network replica 1: Shared memory.
+[2026-07-11 10:59:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 1 seldepth 2 multipv 1 score cp -1 nodes 20 nps 5000 hashfull 0 tbhits 0 time 4 pv e2e4
+[2026-07-11 10:59:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 2 seldepth 3 multipv 1 score cp 27 nodes 48 nps 12000 hashfull 0 tbhits 0 time 4 pv e2e4
+[2026-07-11 10:59:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 3 seldepth 4 multipv 1 score cp 35 nodes 103 nps 20600 hashfull 0 tbhits 0 time 5 pv e2e4
+[2026-07-11 10:59:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 4 seldepth 5 multipv 1 score cp 37 nodes 258 nps 32250 hashfull 0 tbhits 0 time 8 pv d2d4
+[2026-07-11 10:59:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: bestmove d2d4
+[2026-07-11 10:59:40] Writing CSV results to: comparison_results.csv
+[2026-07-11 10:59:40] Comparison process finished successfully.
+[2026-07-11 10:59:58] =========================================================
+[2026-07-11 10:59:58] Starting Vanth vs Stockfish Comparison Harness
+[2026-07-11 10:59:58] =========================================================
+[2026-07-11 10:59:58] Vanth path: D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe
+[2026-07-11 10:59:58] Stockfish path: D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe
+[2026-07-11 10:59:58] Loaded 3 positions to evaluate.
+[2026-07-11 10:59:58] Initializing engines...
+[2026-07-11 10:59:58] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: id name Vanth Chess Engine
+[2026-07-11 10:59:58] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: id author Google Deepmind team
+[2026-07-11 10:59:58] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Contempt type spin default 0 min -100 max 100
+[2026-07-11 10:59:58] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Hash type spin default 16 min 1 max 2048
+[2026-07-11 10:59:58] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Move Overhead type spin default 10 min 0 max 5000
+[2026-07-11 10:59:58] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name MultiPV type spin default 1 min 1 max 256
+[2026-07-11 10:59:58] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name OwnBook type check default true
+[2026-07-11 10:59:58] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Ponder type check default false
+[2026-07-11 10:59:58] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Skill Level type spin default 20 min 0 max 20
+[2026-07-11 10:59:58] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Threads type spin default 1 min 1 max 64
+[2026-07-11 10:59:58] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: uciok
+[2026-07-11 10:59:58] Vanth started successfully.
+[2026-07-11 10:59:58] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: Stockfish 18 by the Stockfish developers (see AUTHORS file)
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: id name Stockfish 18
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: id author the Stockfish developers (see AUTHORS file)
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Debug Log File type string default <empty>
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name NumaPolicy type string default auto
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Threads type spin default 1 min 1 max 1024
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Hash type spin default 16 min 1 max 33554432
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Clear Hash type button
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Ponder type check default false
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name MultiPV type spin default 1 min 1 max 256
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Skill Level type spin default 20 min 0 max 20
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Move Overhead type spin default 10 min 0 max 5000
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name nodestime type spin default 0 min 0 max 10000
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_Chess960 type check default false
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_LimitStrength type check default false
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_Elo type spin default 1320 min 1320 max 3190
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_ShowWDL type check default false
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyPath type string default <empty>
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyProbeDepth type spin default 1 min 1 max 100
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Syzygy50MoveRule type check default true
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyProbeLimit type spin default 7 min 0 max 7
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name EvalFile type string default nn-c288c895ea92.nnue
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name EvalFileSmall type string default nn-37f18f62d772.nnue
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: uciok
+[2026-07-11 10:59:59] Stockfish started successfully.
+[2026-07-11 10:59:59] Comparing position: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+[2026-07-11 10:59:59] Running Vanth search...
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: readyok
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 1 seldepth 1 score cp 100 nodes 43 nps 0 time 0 hashfull 0 pv b1c3
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 2 seldepth 2 score cp 16 nodes 190 nps 63333 time 3 hashfull 0 pv b1c3 b8c6
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 3 seldepth 3 score cp 237 nodes 765 nps 69545 time 11 hashfull 0 pv g1f3 f7f6 b1c3
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 4 seldepth 4 score cp 16 nodes 1734 nps 66692 time 26 hashfull 0 pv g1f3 b8c6 b1c3 g8f6
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: bestmove g1f3 ponder b8c6
+[2026-07-11 10:59:59] Running Stockfish search...
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: readyok
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Available processors: 0-3
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Using 1 thread
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-c288c895ea92.nnue (125MiB, (102384, 1024, 15, 32, 1))
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Network replica 1: Shared memory.
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 1 seldepth 2 multipv 1 score cp -1 nodes 20 nps 20000 hashfull 0 tbhits 0 time 1 pv e2e4
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 2 seldepth 3 multipv 1 score cp 27 nodes 48 nps 48000 hashfull 0 tbhits 0 time 1 pv e2e4
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 3 seldepth 4 multipv 1 score cp 35 nodes 103 nps 51500 hashfull 0 tbhits 0 time 2 pv e2e4
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 4 seldepth 5 multipv 1 score cp 37 nodes 258 nps 86000 hashfull 0 tbhits 0 time 3 pv d2d4
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: bestmove d2d4
+[2026-07-11 10:59:59] Comparing position: r1bqk2r/pppp1ppp/2n2n2/4p3/1bB1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5
+[2026-07-11 10:59:59] Running Vanth search...
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: readyok
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 1 seldepth 1 score cp 325 nodes 74 nps 74000 time 1 hashfull 0 pv e1g1
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 2 seldepth 2 score cp 201 nodes 412 nps 58857 time 7 hashfull 0 pv f3g5 e8g8
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 3 seldepth 3 score cp 268 nodes 881 nps 55062 time 16 hashfull 0 pv f3g5 b4c3 c4f7
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 4 seldepth 4 score cp 268 nodes 1534 nps 51133 time 30 hashfull 0 pv f3g5 b4c3 c4f7 e8f8
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: bestmove f3g5 ponder b4c3
+[2026-07-11 10:59:59] Running Stockfish search...
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: readyok
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Available processors: 0-3
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Using 1 thread
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-c288c895ea92.nnue (125MiB, (102384, 1024, 15, 32, 1))
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Network replica 1: Shared memory.
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 1 seldepth 5 multipv 1 score cp 11 nodes 64 nps 1684 hashfull 0 tbhits 0 time 38 pv e1g1 b4c3 b2c3 f6e4
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 2 seldepth 5 multipv 1 score cp 30 nodes 157 nps 3829 hashfull 0 tbhits 0 time 41 pv f3g5
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 3 seldepth 4 multipv 1 score cp 42 nodes 208 nps 5073 hashfull 0 tbhits 0 time 41 pv f3g5
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 4 seldepth 5 multipv 1 score cp 84 nodes 291 nps 3730 hashfull 0 tbhits 0 time 78 pv f3g5
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: bestmove f3g5
+[2026-07-11 10:59:59] Comparing position: r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3
+[2026-07-11 10:59:59] Running Vanth search...
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: readyok
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 1 seldepth 1 score cp 386 nodes 19 nps 0 time 0 hashfull 0 pv f1c4
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 2 seldepth 2 score cp 74 nodes 184 nps 92000 time 2 hashfull 0 pv f1c4 e7e6
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 3 seldepth 3 score cp 146 nodes 340 nps 68000 time 5 hashfull 0 pv f1c4 e7e6 b1c3
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 4 seldepth 4 score cp 122 nodes 1577 nps 54379 time 29 hashfull 0 pv b1c3 c6d4 c3d5 e7e6
+[2026-07-11 10:59:59] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: bestmove b1c3 ponder c6d4
+[2026-07-11 10:59:59] Running Stockfish search...
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: readyok
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Available processors: 0-3
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Using 1 thread
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-c288c895ea92.nnue (125MiB, (102384, 1024, 15, 32, 1))
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Network replica 1: Shared memory.
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 1 seldepth 2 multipv 1 score cp 9 nodes 30 nps 15000 hashfull 0 tbhits 0 time 2 pv f1b5
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 2 seldepth 3 multipv 1 score cp 20 nodes 67 nps 33500 hashfull 0 tbhits 0 time 2 pv f1b5
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 3 seldepth 5 multipv 1 score cp 30 nodes 119 nps 59500 hashfull 0 tbhits 0 time 2 pv f1b5
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 4 seldepth 5 multipv 1 score cp 44 nodes 224 nps 22400 hashfull 0 tbhits 0 time 10 pv f1b5
+[2026-07-11 10:59:59] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: bestmove f1b5
+[2026-07-11 10:59:59] Writing CSV results to: comparison_results.csv
+[2026-07-11 10:59:59] Comparison process finished successfully.
+[2026-07-11 11:13:33] =========================================================
+[2026-07-11 11:13:33] Starting Vanth vs Stockfish Comparison Harness
+[2026-07-11 11:13:33] =========================================================
+[2026-07-11 11:13:33] Vanth path: D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe
+[2026-07-11 11:13:33] Stockfish path: D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe
+[2026-07-11 11:13:33] Loaded 1 positions to evaluate.
+[2026-07-11 11:13:33] Initializing engines...
+[2026-07-11 11:13:33] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: id name Vanth Chess Engine
+[2026-07-11 11:13:33] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: id author Google Deepmind team
+[2026-07-11 11:13:33] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Contempt type spin default 0 min -100 max 100
+[2026-07-11 11:13:33] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Hash type spin default 16 min 1 max 2048
+[2026-07-11 11:13:33] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Move Overhead type spin default 10 min 0 max 5000
+[2026-07-11 11:13:33] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name MultiPV type spin default 1 min 1 max 256
+[2026-07-11 11:13:33] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name OwnBook type check default true
+[2026-07-11 11:13:33] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Ponder type check default false
+[2026-07-11 11:13:33] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Skill Level type spin default 20 min 0 max 20
+[2026-07-11 11:13:33] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Threads type spin default 1 min 1 max 64
+[2026-07-11 11:13:33] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: uciok
+[2026-07-11 11:13:33] Vanth started successfully.
+[2026-07-11 11:13:33] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: Stockfish 18 by the Stockfish developers (see AUTHORS file)
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: id name Stockfish 18
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: id author the Stockfish developers (see AUTHORS file)
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Debug Log File type string default <empty>
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name NumaPolicy type string default auto
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Threads type spin default 1 min 1 max 1024
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Hash type spin default 16 min 1 max 33554432
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Clear Hash type button
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Ponder type check default false
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name MultiPV type spin default 1 min 1 max 256
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Skill Level type spin default 20 min 0 max 20
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Move Overhead type spin default 10 min 0 max 5000
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name nodestime type spin default 0 min 0 max 10000
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_Chess960 type check default false
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_LimitStrength type check default false
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_Elo type spin default 1320 min 1320 max 3190
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_ShowWDL type check default false
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyPath type string default <empty>
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyProbeDepth type spin default 1 min 1 max 100
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Syzygy50MoveRule type check default true
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyProbeLimit type spin default 7 min 0 max 7
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name EvalFile type string default nn-c288c895ea92.nnue
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name EvalFileSmall type string default nn-37f18f62d772.nnue
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: uciok
+[2026-07-11 11:13:34] Stockfish started successfully.
+[2026-07-11 11:13:34] Comparing position: rnbqkbn1/pppppp2/8/6pQ/4P3/8/PPPP1P1P/RNBQKBNR b KQq - 0 4
+[2026-07-11 11:13:34] Running Vanth search...
+[2026-07-11 11:13:34] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: readyok
+[2026-07-11 11:13:34] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 1 seldepth 1 score cp -1455 nodes 58 nps 14500 time 4 hashfull 0 pv g8f6
+[2026-07-11 11:13:34] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 2 seldepth 2 score cp -1420 nodes 204 nps 13600 time 15 hashfull 0 pv g8f6 h5f3
+[2026-07-11 11:13:34] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 3 seldepth 3 score cp -1325 nodes 396 nps 16500 time 24 hashfull 0 pv g8f6 h5h8 f6e4
+[2026-07-11 11:13:34] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 4 seldepth 4 score cp -1499 nodes 565 nps 15694 time 36 hashfull 0 pv g8f6 h5h8 f6e4 f1d3
+[2026-07-11 11:13:34] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 5 seldepth 5 score cp -1609 nodes 1689 nps 22520 time 75 hashfull 0 pv g8f6 h5h8 f6e4 f2f3 e4d6
+[2026-07-11 11:13:34] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 6 seldepth 6 score cp -1719 nodes 8919 nps 27613 time 323 hashfull 0 pv g8f6 h5h8 b8c6 d2d3 c6d4 c1g5
+[2026-07-11 11:13:34] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: bestmove g8f6 ponder h5h8
+[2026-07-11 11:13:34] Running Stockfish search...
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: readyok
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Available processors: 0-3
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Using 1 thread
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-c288c895ea92.nnue (125MiB, (102384, 1024, 15, 32, 1))
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Network replica 1: Shared memory.
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 1 seldepth 3 multipv 1 score cp -875 nodes 19 nps 9500 hashfull 0 tbhits 0 time 2 pv g5g4
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 2 seldepth 3 multipv 1 score cp -835 nodes 38 nps 19000 hashfull 0 tbhits 0 time 2 pv g5g4 h5g4
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 3 seldepth 5 multipv 1 score cp -889 nodes 65 nps 32500 hashfull 0 tbhits 0 time 2 pv e7e5
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 4 seldepth 7 multipv 1 score cp -843 nodes 106 nps 53000 hashfull 0 tbhits 0 time 2 pv e7e5 a2a3 g5g4 h5e5 g8e7
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 5 seldepth 7 multipv 1 score cp -859 nodes 170 nps 85000 hashfull 0 tbhits 0 time 2 pv e7e5 d2d3 f8b4 b1d2
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 6 seldepth 7 multipv 1 score cp -891 nodes 268 nps 134000 hashfull 0 tbhits 0 time 2 pv e7e6 d2d3 f8b4 b1d2
+[2026-07-11 11:13:34] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: bestmove e7e6 ponder d2d3
+[2026-07-11 11:13:34] Writing CSV results to: comparison_results.csv
+[2026-07-11 11:13:34] Comparison process finished successfully.
+[2026-07-11 11:13:39] =========================================================
+[2026-07-11 11:13:39] Starting Vanth vs Stockfish Comparison Harness
+[2026-07-11 11:13:39] =========================================================
+[2026-07-11 11:13:39] Vanth path: D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe
+[2026-07-11 11:13:39] Stockfish path: D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe
+[2026-07-11 11:13:39] Loaded 1 positions to evaluate.
+[2026-07-11 11:13:39] Initializing engines...
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: id name Vanth Chess Engine
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: id author Google Deepmind team
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Contempt type spin default 0 min -100 max 100
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Hash type spin default 16 min 1 max 2048
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Move Overhead type spin default 10 min 0 max 5000
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name MultiPV type spin default 1 min 1 max 256
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name OwnBook type check default true
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Ponder type check default false
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Skill Level type spin default 20 min 0 max 20
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Threads type spin default 1 min 1 max 64
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: uciok
+[2026-07-11 11:13:39] Vanth started successfully.
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: Stockfish 18 by the Stockfish developers (see AUTHORS file)
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: id name Stockfish 18
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: id author the Stockfish developers (see AUTHORS file)
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Debug Log File type string default <empty>
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name NumaPolicy type string default auto
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Threads type spin default 1 min 1 max 1024
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Hash type spin default 16 min 1 max 33554432
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Clear Hash type button
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Ponder type check default false
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name MultiPV type spin default 1 min 1 max 256
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Skill Level type spin default 20 min 0 max 20
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Move Overhead type spin default 10 min 0 max 5000
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name nodestime type spin default 0 min 0 max 10000
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_Chess960 type check default false
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_LimitStrength type check default false
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_Elo type spin default 1320 min 1320 max 3190
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_ShowWDL type check default false
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyPath type string default <empty>
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyProbeDepth type spin default 1 min 1 max 100
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Syzygy50MoveRule type check default true
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyProbeLimit type spin default 7 min 0 max 7
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name EvalFile type string default nn-c288c895ea92.nnue
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name EvalFileSmall type string default nn-37f18f62d772.nnue
+[2026-07-11 11:13:39] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: uciok
+[2026-07-11 11:13:39] Stockfish started successfully.
+[2026-07-11 11:13:39] Comparing position: rnbqkbnr/pppppp1p/8/6pr/4P3/8/PPPP1PPP/RNBQKBNR w KQkq g6 0 4
+[2026-07-11 11:13:39] Running Vanth search...
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: readyok
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 1 seldepth 1 score cp 384 nodes 3 nps 0 time 0 hashfull 0 pv d1h5
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 2 seldepth 2 score cp -143 nodes 141 nps 35250 time 4 hashfull 0 pv f1b5 h5h4
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 3 seldepth 3 score cp -24 nodes 345 nps 34500 time 10 hashfull 0 pv f1b5 h5h4 b1c3
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 4 seldepth 4 score cp -189 nodes 2252 nps 31718 time 71 hashfull 0 pv f1c4 h5h4 d1f3 h4f4
+[2026-07-11 11:13:39] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 5 seldepth 5 score cp 9 nodes 4592 nps 34526 time 133 hashfull 0 pv d1h5 g8f6 h5f3 d7d5 e4e5
+[2026-07-11 11:13:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 6 seldepth 6 score cp 189 nodes 7222 nps 35930 time 201 hashfull 0 pv d1h5 g8f6 h5g5 d7d5 f1b5 b8c6
+[2026-07-11 11:13:40] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: bestmove d1h5 ponder g8f6
+[2026-07-11 11:13:40] Running Stockfish search...
+[2026-07-11 11:13:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: readyok
+[2026-07-11 11:13:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Available processors: 0-3
+[2026-07-11 11:13:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Using 1 thread
+[2026-07-11 11:13:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-c288c895ea92.nnue (125MiB, (102384, 1024, 15, 32, 1))
+[2026-07-11 11:13:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+[2026-07-11 11:13:40] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Network replica 1: Shared memory.
+[2026-07-11 11:14:10] WARNING: Stockfish timed out or returned no move. Restarting process...
+[2026-07-11 11:22:11] =========================================================
+[2026-07-11 11:22:11] Starting Vanth vs Stockfish Comparison Harness
+[2026-07-11 11:22:11] =========================================================
+[2026-07-11 11:22:11] Vanth path: D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe
+[2026-07-11 11:22:11] Stockfish path: D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe
+[2026-07-11 11:22:11] Loaded 3 positions to evaluate.
+[2026-07-11 11:22:11] Initializing engines...
+[2026-07-11 11:22:11] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: id name Vanth Chess Engine
+[2026-07-11 11:22:11] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: id author Google Deepmind team
+[2026-07-11 11:22:11] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Contempt type spin default 0 min -100 max 100
+[2026-07-11 11:22:11] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Hash type spin default 16 min 1 max 2048
+[2026-07-11 11:22:11] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Move Overhead type spin default 10 min 0 max 5000
+[2026-07-11 11:22:11] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name MultiPV type spin default 1 min 1 max 256
+[2026-07-11 11:22:11] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name OwnBook type check default true
+[2026-07-11 11:22:11] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Ponder type check default false
+[2026-07-11 11:22:11] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Skill Level type spin default 20 min 0 max 20
+[2026-07-11 11:22:11] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: option name Threads type spin default 1 min 1 max 64
+[2026-07-11 11:22:11] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: uciok
+[2026-07-11 11:22:11] Vanth started successfully.
+[2026-07-11 11:22:11] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: Stockfish 18 by the Stockfish developers (see AUTHORS file)
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: id name Stockfish 18
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: id author the Stockfish developers (see AUTHORS file)
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Debug Log File type string default <empty>
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name NumaPolicy type string default auto
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Threads type spin default 1 min 1 max 1024
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Hash type spin default 16 min 1 max 33554432
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Clear Hash type button
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Ponder type check default false
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name MultiPV type spin default 1 min 1 max 256
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Skill Level type spin default 20 min 0 max 20
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Move Overhead type spin default 10 min 0 max 5000
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name nodestime type spin default 0 min 0 max 10000
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_Chess960 type check default false
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_LimitStrength type check default false
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_Elo type spin default 1320 min 1320 max 3190
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name UCI_ShowWDL type check default false
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyPath type string default <empty>
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyProbeDepth type spin default 1 min 1 max 100
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name Syzygy50MoveRule type check default true
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name SyzygyProbeLimit type spin default 7 min 0 max 7
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name EvalFile type string default nn-c288c895ea92.nnue
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: option name EvalFileSmall type string default nn-37f18f62d772.nnue
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: uciok
+[2026-07-11 11:22:14] Stockfish started successfully.
+[2026-07-11 11:22:14] Comparing position: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+[2026-07-11 11:22:14] Running Vanth search...
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: readyok
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 1 seldepth 1 score cp 100 nodes 43 nps 43000 time 1 hashfull 0 pv b1c3
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 2 seldepth 2 score cp 16 nodes 190 nps 38000 time 5 hashfull 0 pv b1c3 b8c6
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 3 seldepth 3 score cp 237 nodes 765 nps 26379 time 29 hashfull 0 pv g1f3 f7f6 b1c3
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 4 seldepth 4 score cp 104 nodes 1843 nps 25957 time 71 hashfull 0 pv e2e3 f7f6 f1c4 e7e6
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: bestmove e2e3 ponder f7f6
+[2026-07-11 11:22:14] Running Stockfish search...
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: readyok
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Available processors: 0-3
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Using 1 thread
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-c288c895ea92.nnue (125MiB, (102384, 1024, 15, 32, 1))
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Network replica 1: Shared memory.
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 1 seldepth 2 multipv 1 score cp -1 nodes 20 nps 5000 hashfull 0 tbhits 0 time 4 pv e2e4
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 2 seldepth 3 multipv 1 score cp 27 nodes 48 nps 12000 hashfull 0 tbhits 0 time 4 pv e2e4
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 3 seldepth 4 multipv 1 score cp 35 nodes 103 nps 20600 hashfull 0 tbhits 0 time 5 pv e2e4
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 4 seldepth 5 multipv 1 score cp 37 nodes 258 nps 51600 hashfull 0 tbhits 0 time 5 pv d2d4
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: bestmove d2d4
+[2026-07-11 11:22:14] Comparing position: r1bqk2r/pppp1ppp/2n2n2/4p3/1bB1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5
+[2026-07-11 11:22:14] Running Vanth search...
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: readyok
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 1 seldepth 1 score cp 325 nodes 74 nps 74000 time 1 hashfull 0 pv e1g1
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 2 seldepth 2 score cp 201 nodes 412 nps 24235 time 17 hashfull 0 pv f3g5 e8g8
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 3 seldepth 3 score cp 268 nodes 881 nps 22589 time 39 hashfull 0 pv f3g5 b4c3 c4f7
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 4 seldepth 4 score cp 268 nodes 1534 nps 21605 time 71 hashfull 0 pv f3g5 b4c3 c4f7 e8f8
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: bestmove f3g5 ponder b4c3
+[2026-07-11 11:22:14] Running Stockfish search...
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: readyok
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Available processors: 0-3
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Using 1 thread
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-c288c895ea92.nnue (125MiB, (102384, 1024, 15, 32, 1))
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Network replica 1: Shared memory.
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 1 seldepth 5 multipv 1 score cp 11 nodes 64 nps 32000 hashfull 0 tbhits 0 time 2 pv e1g1 b4c3 b2c3 f6e4
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 2 seldepth 5 multipv 1 score cp 30 nodes 157 nps 78500 hashfull 0 tbhits 0 time 2 pv f3g5
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 3 seldepth 4 multipv 1 score cp 42 nodes 208 nps 104000 hashfull 0 tbhits 0 time 2 pv f3g5
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 4 seldepth 5 multipv 1 score cp 84 nodes 291 nps 145500 hashfull 0 tbhits 0 time 2 pv f3g5
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: bestmove f3g5
+[2026-07-11 11:22:14] Comparing position: r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3
+[2026-07-11 11:22:14] Running Vanth search...
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: readyok
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 1 seldepth 1 score cp 386 nodes 19 nps 0 time 0 hashfull 0 pv f1c4
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 2 seldepth 2 score cp 74 nodes 184 nps 26285 time 7 hashfull 0 pv f1c4 e7e6
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 3 seldepth 3 score cp 146 nodes 340 nps 30909 time 11 hashfull 0 pv f1c4 e7e6 b1c3
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: info depth 4 seldepth 4 score cp 122 nodes 1577 nps 25852 time 61 hashfull 0 pv b1c3 c6d4 c3d5 e7e6
+[2026-07-11 11:22:14] [D:\Final - Projects\Chess Engine\engine\build\benchmarks\Release\chess_benchmarks.exe stdout]: bestmove b1c3 ponder c6d4
+[2026-07-11 11:22:14] Running Stockfish search...
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: readyok
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Available processors: 0-3
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Using 1 thread
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-c288c895ea92.nnue (125MiB, (102384, 1024, 15, 32, 1))
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info string Network replica 1: Shared memory.
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 1 seldepth 2 multipv 1 score cp 9 nodes 30 nps 30000 hashfull 0 tbhits 0 time 1 pv f1b5
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 2 seldepth 3 multipv 1 score cp 20 nodes 67 nps 67000 hashfull 0 tbhits 0 time 1 pv f1b5
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 3 seldepth 5 multipv 1 score cp 30 nodes 119 nps 119000 hashfull 0 tbhits 0 time 1 pv f1b5
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: info depth 4 seldepth 5 multipv 1 score cp 44 nodes 224 nps 224000 hashfull 0 tbhits 0 time 1 pv f1b5
+[2026-07-11 11:22:14] [D:\requirements\Stockfish\stockfish\stockfish-windows-x86-64-avx2.exe stdout]: bestmove f1b5
+[2026-07-11 11:22:14] Writing CSV results to: comparison_results.csv
+[2026-07-11 11:22:14] Comparison process finished successfully.

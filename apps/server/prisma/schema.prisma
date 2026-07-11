@@ -1,0 +1,162 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String            @id @default(uuid())
+  email            String            @unique
+  passwordHash     String
+  name             String?
+  role             String            @default("user")
+  refreshToken     String?
+  resetToken       String?
+  resetTokenExpiry DateTime?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  analyses         AnalysisHistory[]
+  auditLogs        AuditLog[]
+  comments         Comment[]
+  games            Game[]
+  notifications    Notification[]
+  savedPositions   SavedPosition[]
+  settings         Settings?
+  studies          Study[]
+  studyMembers     StudyMember[]
+}
+
+model Settings {
+  id           String  @id @default(uuid())
+  theme        String  @default("dark")
+  boardTheme   String  @default("emerald")
+  pieceTheme   String  @default("neo")
+  defaultDepth Int     @default(5)
+  threads      Int     @default(1)
+  hashSize     Int     @default(16)
+  searchTime   Int     @default(1000)
+  ownBook      Boolean @default(true)
+  ponder       Boolean @default(false)
+  userId       String  @unique
+  user         User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model SavedPosition {
+  id        String   @id @default(uuid())
+  fen       String
+  name      String
+  notes     String?
+  tags      String?
+  createdAt DateTime @default(now())
+  userId    String?
+  studyId   String?
+  study     Study?   @relation(fields: [studyId], references: [id])
+  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model AnalysisHistory {
+  id         String   @id @default(uuid())
+  fen        String
+  depth      Int
+  bestMove   String
+  score      Int
+  reportJson String
+  createdAt  DateTime @default(now())
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Game {
+  id             String   @id @default(uuid())
+  pgn            String
+  result         String   @default("*")
+  whitePlayer    String   @default("Player 1")
+  blackPlayer    String   @default("Vanth Engine")
+  date           String
+  headersJson    String?
+  movesJson      String?
+  reportJson     String?
+  analysisStatus String   @default("pending")
+  accuracyWhite  Float?
+  accuracyBlack  Float?
+  eco            String?
+  openingName    String?
+  isPublic       Boolean  @default(true)
+  shareToken     String?  @unique
+  tags           String?
+  createdAt      DateTime @default(now())
+  userId         String?
+  studyId        String?
+  study          Study?   @relation(fields: [studyId], references: [id])
+  user           User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Study {
+  id          String          @id @default(uuid())
+  name        String
+  description String?
+  isPublic    Boolean         @default(true)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  userId      String
+  comments    Comment[]
+  games       Game[]
+  positions   SavedPosition[]
+  user        User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  members     StudyMember[]
+}
+
+model StudyMember {
+  id       String   @id @default(uuid())
+  role     String   @default("viewer")
+  joinedAt DateTime @default(now())
+  studyId  String
+  userId   String
+  study    Study    @relation(fields: [studyId], references: [id], onDelete: Cascade)
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([studyId, userId])
+}
+
+model Comment {
+  id        String   @id @default(uuid())
+  content   String
+  createdAt DateTime @default(now())
+  studyId   String
+  userId    String
+  study     Study    @relation(fields: [studyId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  title     String
+  content   String
+  type      String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  action    String
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+}
+
+model OpeningCache {
+  id         String @id @default(uuid())
+  fenHash    String @unique
+  eco        String
+  name       String
+  popularity Int    @default(0)
+  evaluation Int    @default(0)
+}

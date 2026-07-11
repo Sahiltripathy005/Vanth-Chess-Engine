@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Vanth_Baseline",
+    "version": "3.5",
+    "commit_hash": "dev",
+    "search_config": "default",
+    "eval_config": "default",
+    "elo": 1500,
+    "elo_error": 0,
+    "games": 0,
+    "wins": 0,
+    "losses": 0,
+    "draws": 0,
+    "date": "2026-07-11"
+  }
+]

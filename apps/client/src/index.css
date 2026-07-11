@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    @apply h-full w-full font-sans antialiased bg-darkBg text-textColor;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-accentBg rounded-full hover:bg-slate-700 transition-colors;
+}
+
+/* Custom styles for chess board */
+.chess-square {
+  aspect-ratio: 1;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+}
+
+.chess-piece {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: transform 0.15s ease-out;
+}
+
+.chess-piece img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+}

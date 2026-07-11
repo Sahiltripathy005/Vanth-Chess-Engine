@@ -1,0 +1,21 @@
+{
+  "overall_pass": true,
+  "total_modules_run": 9,
+  "total_modules_passed": 9,
+  "tactical_total": 6,
+  "tactical_solved": 6,
+  "tactical_accuracy": 100,
+  "strategic_total": 5,
+  "strategic_passed": 5,
+  "endgame_total": 4,
+  "endgame_passed": 4,
+  "opening_total": 6,
+  "opening_passed": 6,
+  "perft_passed": true,
+  "stability_passed": true,
+  "symmetry_passed": true,
+  "stress_positions_checked": 500,
+  "stress_passed": true,
+  "regression_bugs_total": 5,
+  "regression_bugs_passed": 5
+}
