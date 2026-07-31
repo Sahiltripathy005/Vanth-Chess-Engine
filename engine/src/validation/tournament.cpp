@@ -1,6 +1,7 @@
 #include "chess/validation/tournament.hpp"
 #include "chess/validation/tuning.hpp"
 #include "chess/search/search.hpp"
+#include "chess/search/negamax.hpp"
 #include "chess/moves/move_generator.hpp"
 #include <iostream>
 #include <algorithm>
@@ -66,6 +67,27 @@ int TournamentManager::play_game(const MatchPlayer& white, const MatchPlayer& bl
             TuningManager::get().load_weights(current_player.config_file);
         } else {
             TuningManager::get().reset_to_defaults();
+        }
+
+        // Toggle search parameters dynamically based on player name (Module 9)
+        if (current_player.name.find("Baseline") != std::string::npos ||
+            current_player.name.find("V3.6") != std::string::npos ||
+            current_player.name.find("Base") != std::string::npos) {
+            search::g_enable_v36_ordering = false;
+            search::g_enable_conthist = false;
+            search::g_enable_countermoves = false;
+            search::g_enable_lmr = false;
+            search::g_enable_nmp = false;
+            search::g_search_config.mdp_enable = false;
+            search::g_search_config.iid_depth = 99;
+        } else {
+            search::g_enable_v36_ordering = true;
+            search::g_enable_conthist = true;
+            search::g_enable_countermoves = true;
+            search::g_enable_lmr = true;
+            search::g_enable_nmp = true;
+            search::g_search_config.mdp_enable = true;
+            search::g_search_config.iid_depth = 5;
         }
 
         // Search

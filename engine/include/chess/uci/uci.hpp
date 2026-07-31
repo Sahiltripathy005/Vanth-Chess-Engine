@@ -28,11 +28,14 @@ public:
     void handle_stop();
     void handle_debug(const std::string& args);
     void handle_register();
+    void handle_search_profile();
+    void handle_benchmark_compare();
 
 private:
     board::Board board_;
     std::atomic<bool> searching_;
     std::thread search_thread_;
+    search::SearchInfo last_search_info_;
 
     // Helper: parses a move list and plays them on the board
     void play_moves(const std::vector<std::string>& move_strings);

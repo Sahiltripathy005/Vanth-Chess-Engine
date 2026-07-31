@@ -27,7 +27,7 @@ void TranspositionTable::resize(std::size_t size_mb) {
     clear();
 }
 
-bool TranspositionTable::probe(uint64_t key, int depth, int ply, int alpha, int beta, int& score, moves::Move& best_move) {
+bool TranspositionTable::probe(uint64_t key, int depth, int ply, int alpha, int beta, int& score, moves::Move& best_move, TTBound* out_bound) {
     if (entries_.empty()) return false;
     lookups_++;
     size_t index = key % entries_.size();
@@ -48,16 +48,19 @@ bool TranspositionTable::probe(uint64_t key, int depth, int ply, int alpha, int 
             if (entry.bound == TTBound::Exact) {
                 score = entry_score;
                 hits_++;
+                if (out_bound) *out_bound = entry.bound;
                 return true;
             }
             if (entry.bound == TTBound::Upper && entry_score <= alpha) {
                 score = entry_score;
                 hits_++;
+                if (out_bound) *out_bound = entry.bound;
                 return true;
             }
             if (entry.bound == TTBound::Lower && entry_score >= beta) {
                 score = entry_score;
                 hits_++;
+                if (out_bound) *out_bound = entry.bound;
                 return true;
             }
         }

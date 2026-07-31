@@ -38,6 +38,25 @@ SearchInfo find_best_move(
     std::memset(info.killer_moves, 0, sizeof(info.killer_moves));
     std::memset(info.history_moves, 0, sizeof(info.history_moves));
 
+    // Initialize Advanced Selectivity Counters (Module 7)
+    info.pv_nodes_count = 0;
+    info.cut_nodes_count = 0;
+    info.all_nodes_count = 0;
+    info.tt_exact_hits = 0;
+    info.tt_lower_hits = 0;
+    info.tt_upper_hits = 0;
+    info.lmr_usage = 0;
+    info.nmp_usage = 0;
+    info.iid_usage = 0;
+    info.mdp_usage = 0;
+    info.total_reduction_depth = 0;
+    info.total_extension_depth = 0;
+    info.iid_calls = 0;
+    info.iid_successes = 0;
+    info.aspiration_researches = 0;
+    info.aspiration_expansions = 0;
+    info.mdp_prunings = 0;
+
     // Check game terminal conditions at root
     std::vector<moves::Move> root_moves = moves::MoveGenerator::generate_legal_moves(board);
 
@@ -167,6 +186,8 @@ SearchInfo find_best_move(
             pt.score = (board.active_color() == pieces::Color::White) ? best_score : -best_score;
             pt.best_move = best_move.to_string();
             info.timeline.push_back(pt);
+
+            context.previous_pv_move = best_move;
         }
 
         info.alternatives.clear();
@@ -177,7 +198,6 @@ SearchInfo find_best_move(
     } else {
         // Iterative Deepening Loop
         for (int d = 1; d <= depth; ++d) {
-            // Check soft time limit
             if (d > 1 && time_manager.should_stop_iterative_deepening()) {
                 break;
             }
@@ -185,8 +205,9 @@ SearchInfo find_best_move(
             int score = 0;
             int alpha = -kInfiniteScore;
             int beta = kInfiniteScore;
-            const int margin = 40; // 40 centipawns aspiration window margin
 
+            // --- Adaptive Aspiration Windows (Module 4) ---
+            int margin = g_search_config.aspiration_initial;
             if (d >= 5 && best_score > -kInfiniteScore + 1000 && best_score < kInfiniteScore - 1000) {
                 alpha = best_score - margin;
                 beta = best_score + margin;
@@ -204,15 +225,19 @@ SearchInfo find_best_move(
                     if (alpha == -kInfiniteScore) {
                         break;
                     }
-                    // Fail-low: expand alpha
-                    alpha = std::max(-kInfiniteScore, alpha - margin * (1 << fail_count));
+                    // Fail-low: expand alpha using ASPIRATION_EXPANSION margin
+                    info.aspiration_researches++;
+                    info.aspiration_expansions++;
+                    alpha = std::max(-kInfiniteScore, alpha - g_search_config.aspiration_expansion * (1 << fail_count));
                     fail_count++;
                 } else if (score >= beta) {
                     if (beta == kInfiniteScore) {
                         break;
                     }
-                    // Fail-high: expand beta
-                    beta = std::min(kInfiniteScore, beta + margin * (1 << fail_count));
+                    // Fail-high: expand beta using ASPIRATION_EXPANSION margin
+                    info.aspiration_researches++;
+                    info.aspiration_expansions++;
+                    beta = std::min(kInfiniteScore, beta + g_search_config.aspiration_expansion * (1 << fail_count));
                     fail_count++;
                 } else {
                     // Score falls in window
@@ -264,7 +289,7 @@ SearchInfo find_best_move(
                 }
             }
 
-            // Print UCI standard info line
+            // Print UCI info line
             auto curr_time = std::chrono::high_resolution_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(curr_time - start_time).count();
             uint64_t nps = (duration > 0) ? (info.nodes * 1000 / duration) : 0;
@@ -291,6 +316,8 @@ SearchInfo find_best_move(
             pt.score = print_score;
             pt.best_move = best_move.to_string();
             info.timeline.push_back(pt);
+
+            context.previous_pv_move = best_move;
         }
     }
 

@@ -1,0 +1,39 @@
+{
+  "depth_distribution": {
+    "target_depth": 5,
+    "selective_depth": 5
+  },
+  "reductions": {
+    "lmr_usage": 65,
+    "lmr_reductions": 65,
+    "total_reduction_depth": 116
+  },
+  "extensions": {
+    "total_extension_depth": 61
+  },
+  "tt_usage": {
+    "tt_lookups": 5746,
+    "tt_hits": 108,
+    "tt_exact_hits": 8,
+    "tt_lower_hits": 99,
+    "tt_upper_hits": 1
+  },
+  "cutoffs": {
+    "cutoffs": 961,
+    "fhf": 838,
+    "fhf_percentage": 87.2008
+  },
+  "node_types": {
+    "pv_nodes": 76,
+    "cut_nodes": 961,
+    "all_nodes": 274
+  },
+  "selectivity": {
+    "nmp_usage": 96,
+    "iid_usage": 0,
+    "mdp_usage": 0,
+    "mdp_prunings": 0,
+    "iid_calls": 0,
+    "iid_successes": 0
+  }
+}

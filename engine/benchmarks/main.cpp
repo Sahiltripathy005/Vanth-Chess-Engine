@@ -64,6 +64,8 @@ void print_usage() {
     std::cout << "  chess_benchmarks.exe bugtest [id]                       - Run bug reproduction suite (all or specific bug ID)\n";
     std::cout << "  chess_benchmarks.exe stress [games]                     - Stress test moves generation & state invariants\n";
     std::cout << "  chess_benchmarks.exe validate_engine [subcmd] [arg]     - Run professional engine validation suite (CI-ready)\n";
+    std::cout << "  chess_benchmarks.exe search_profile [depth] [fen]       - Run detailed search profiling on position\n";
+    std::cout << "  chess_benchmarks.exe benchmark_compare [depth]          - Compare baseline vs optimized search efficiency\n";
 }
 
 int main(int argc, char* argv[]) {
@@ -706,6 +708,341 @@ int main(int argc, char* argv[]) {
         int games = (argc >= 3) ? std::stoi(argv[2]) : 100;
         bool ok = chess::validation::Verifier::run_stress_test(games);
         return ok ? 0 : 1;
+    }
+    else if (cmd == "search_profile") {
+        int depth = (argc >= 3) ? std::stoi(argv[2]) : 5;
+        Board board;
+        if (argc >= 4) {
+            if (!board.load_fen(argv[3])) {
+                std::cerr << "Invalid FEN\n";
+                return 1;
+            }
+        } else {
+            board = Board::start_position();
+        }
+        
+        g_tt.clear();
+        std::cout << "Profiling search at depth " << depth << "...\n";
+        auto start = std::chrono::high_resolution_clock::now();
+        auto info = find_best_move(board, depth);
+        auto end = std::chrono::high_resolution_clock::now();
+        long long duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+        double seconds = duration / 1000.0;
+        uint64_t nps = (seconds > 0.0) ? static_cast<uint64_t>(info.nodes / seconds) : 0;
+        
+        std::cout << "========================================================\n"
+                  << "                  SEARCH PROFILING REPORT               \n"
+                  << "========================================================\n"
+                  << "  Nodes:              " << info.nodes << "\n"
+                  << "  QNodes:             " << info.q_nodes << "\n"
+                  << "  Depth / SelDepth:   " << depth << " / " << depth << "\n"
+                  << "  Time (ms):          " << duration << "\n"
+                  << "  NPS:                " << nps << "\n"
+                  << "  Best Move:          " << info.best_move.to_string() << "\n"
+                  << "  Score:              " << info.best_score << "\n"
+                  << "--------------------------------------------------------\n"
+                  << "  Move Ordering Efficiency:\n"
+                  << "    First Move Cutoff % (FHF): ";
+        if (info.ordering_lookups > 0) {
+            std::cout << std::fixed << std::setprecision(1) << (static_cast<double>(info.fhf) / info.ordering_lookups) * 100.0 << "%\n";
+        } else {
+            std::cout << "0.0%\n";
+        }
+        std::cout << "    Avg Cutoff Move Index:   ";
+        if (info.cutoff_count_total > 0) {
+            std::cout << std::fixed << std::setprecision(2) << (static_cast<double>(info.cutoff_index_sum) / info.cutoff_count_total) << "\n";
+        } else {
+            std::cout << "0.0\n";
+        }
+        std::cout << "    Branching Factor:        ";
+        if (info.nodes_visited > 0) {
+            std::cout << std::fixed << std::setprecision(2) << (static_cast<double>(info.moves_searched_total) / info.nodes_visited) << "\n";
+        } else {
+            std::cout << "0.0\n";
+        }
+        std::cout << "    Moves Generated/Node:    ";
+        if (info.nodes_visited > 0) {
+            std::cout << std::fixed << std::setprecision(2) << (static_cast<double>(info.moves_generated_total) / info.nodes_visited) << "\n";
+        } else {
+            std::cout << "0.0\n";
+        }
+        std::cout << "    Moves Searched/Node:     ";
+        if (info.nodes_visited > 0) {
+            std::cout << std::fixed << std::setprecision(2) << (static_cast<double>(info.moves_searched_total) / info.nodes_visited) << "\n";
+        } else {
+            std::cout << "0.0\n";
+        }
+        std::cout << "    Moves Skipped/Node:      ";
+        if (info.nodes_visited > 0) {
+            std::cout << std::fixed << std::setprecision(2) << (static_cast<double>(info.moves_generated_total - info.moves_searched_total) / info.nodes_visited) << "\n";
+        } else {
+            std::cout << "0.0\n";
+        }
+        std::cout << "--------------------------------------------------------\n"
+                  << "  Search Heuristics Breakdown:\n"
+                  << "    Transposition Table (TT) Move:\n"
+                  << "      Searched: " << info.tt_move_searched << ", Cutoffs: " << info.tt_move_cutoffs;
+        if (info.tt_move_searched > 0) {
+            std::cout << " (" << std::fixed << std::setprecision(1) << (static_cast<double>(info.tt_move_cutoffs) / info.tt_move_searched) * 100.0 << "% hit rate)\n";
+        } else {
+            std::cout << " (0.0%)\n";
+        }
+        std::cout << "    Killer Moves:\n"
+                  << "      Searched: " << info.killer_searched << ", Cutoffs: " << info.killer_cutoffs;
+        if (info.killer_searched > 0) {
+            std::cout << " (" << std::fixed << std::setprecision(1) << (static_cast<double>(info.killer_cutoffs) / info.killer_searched) * 100.0 << "% hit rate)\n";
+        } else {
+            std::cout << " (0.0%)\n";
+        }
+        std::cout << "    Countermoves:\n"
+                  << "      Searched: " << info.countermove_searched << ", Cutoffs: " << info.countermove_cutoffs;
+        if (info.countermove_searched > 0) {
+            std::cout << " (" << std::fixed << std::setprecision(1) << (static_cast<double>(info.countermove_cutoffs) / info.countermove_searched) * 100.0 << "% hit rate)\n";
+        } else {
+            std::cout << " (0.0%)\n";
+        }
+        std::cout << "    History Moves:\n"
+                  << "      Searched: " << info.history_searched << ", Cutoffs: " << info.history_cutoffs;
+        if (info.history_searched > 0) {
+            std::cout << " (" << std::fixed << std::setprecision(1) << (static_cast<double>(info.history_cutoffs) / info.history_searched) * 100.0 << "% hit rate)\n";
+        } else {
+            std::cout << " (0.0%)\n";
+        }
+        std::cout << "      Avg History Score: ";
+        if (info.history_score_count > 0) {
+            std::cout << std::fixed << std::setprecision(1) << (static_cast<double>(info.history_score_sum) / info.history_score_count) << "\n";
+        } else {
+            std::cout << "0.0\n";
+        }
+        std::cout << "    Static Exchange Evaluation (SEE):\n"
+                  << "      Winning Captures (SEE > 0): Searched: " << info.see_winning_searched << ", Cutoffs: " << info.see_winning_cutoffs;
+        if (info.see_winning_searched > 0) {
+            std::cout << " (" << std::fixed << std::setprecision(1) << (static_cast<double>(info.see_winning_cutoffs) / info.see_winning_searched) * 100.0 << "%)\n";
+        } else {
+            std::cout << " (0.0%)\n";
+        }
+        std::cout << "      Neutral Captures (SEE == 0): Searched: " << info.see_neutral_searched << ", Cutoffs: " << info.see_neutral_cutoffs;
+        if (info.see_neutral_searched > 0) {
+            std::cout << " (" << std::fixed << std::setprecision(1) << (static_cast<double>(info.see_neutral_cutoffs) / info.see_neutral_searched) * 100.0 << "%)\n";
+        } else {
+            std::cout << " (0.0%)\n";
+        }
+        std::cout << "      Losing Captures (SEE < 0):  Searched: " << info.see_losing_searched << ", Cutoffs: " << info.see_losing_cutoffs;
+        if (info.see_losing_searched > 0) {
+            std::cout << " (" << std::fixed << std::setprecision(1) << (static_cast<double>(info.see_losing_cutoffs) / info.see_losing_searched) * 100.0 << "%)\n";
+        } else {
+            std::cout << " (0.0%)\n";
+        }
+        std::cout << "--------------------------------------------------------\n"
+                  << "  Late Move / Reduction Statistics:\n"
+                  << "    Late Moves Searched:      " << info.late_moves_searched << "\n"
+                  << "    Avg Late Move Position:   ";
+        if (info.late_moves_searched > 0) {
+            std::cout << std::fixed << std::setprecision(2) << (static_cast<double>(info.late_moves_position_sum) / info.late_moves_searched) << "\n";
+        } else {
+            std::cout << "0.0\n";
+        }
+        std::cout << "    LMR Reductions:           " << info.lmr_reductions << "\n"
+                  << "    Avg LMR Reduction Depth:  ";
+        if (info.lmr_reductions > 0) {
+            std::cout << std::fixed << std::setprecision(2) << (static_cast<double>(info.lmr_reduction_depth_sum) / info.lmr_reductions) << "\n";
+        } else {
+            std::cout << "0.0\n";
+        }
+        std::cout << "========================================================\n";
+    }
+    else if (cmd == "benchmark_compare") {
+        int depth = (argc >= 3) ? std::stoi(argv[2]) : 5;
+        Board board = Board::start_position();
+        
+        std::cout << "Starting side-by-side benchmark comparison (depth " << depth << ")..." << std::endl;
+        
+        // 1. Run Baseline (V3.6 optimizations and V3.7 selectivity disabled)
+        g_enable_v36_ordering = false;
+        g_enable_conthist = false;
+        g_enable_countermoves = false;
+        g_enable_lmr = false;
+        g_enable_nmp = false;
+        g_search_config.mdp_enable = false;
+        int orig_iid_depth = g_search_config.iid_depth;
+        g_search_config.iid_depth = 99;
+        
+        g_tt.clear();
+        
+        std::cout << "Running Baseline search..." << std::endl;
+        auto start1 = std::chrono::high_resolution_clock::now();
+        auto info_base = find_best_move(board, depth);
+        auto end1 = std::chrono::high_resolution_clock::now();
+        long long duration_base = std::chrono::duration_cast<std::chrono::milliseconds>(end1 - start1).count();
+        double seconds_base = duration_base / 1000.0;
+        uint64_t nps_base = (seconds_base > 0.0) ? static_cast<uint64_t>(info_base.nodes / seconds_base) : 0;
+        
+        // 2. Run Optimized (V3.7 advanced selectivity enabled)
+        g_enable_v36_ordering = true;
+        g_enable_conthist = true;
+        g_enable_countermoves = true;
+        g_enable_lmr = true;
+        g_enable_nmp = true;
+        g_search_config.mdp_enable = true;
+        g_search_config.iid_depth = orig_iid_depth;
+        
+        g_tt.clear();
+        
+        std::cout << "Running Optimized search..." << std::endl;
+        auto start2 = std::chrono::high_resolution_clock::now();
+        auto info_opt = find_best_move(board, depth);
+        auto end2 = std::chrono::high_resolution_clock::now();
+        long long duration_opt = std::chrono::duration_cast<std::chrono::milliseconds>(end2 - start2).count();
+        double seconds_opt = duration_opt / 1000.0;
+        uint64_t nps_opt = (seconds_opt > 0.0) ? static_cast<uint64_t>(info_opt.nodes / seconds_opt) : 0;
+        
+        // Compute improvements
+        double node_reduction = 0.0;
+        if (info_base.nodes > 0) {
+            node_reduction = (static_cast<double>(info_base.nodes) - info_opt.nodes) / info_base.nodes * 100.0;
+        }
+        double time_reduction = 0.0;
+        if (duration_base > 0) {
+            time_reduction = (static_cast<double>(duration_base) - duration_opt) / duration_base * 100.0;
+        }
+        
+        double fhf_base = info_base.ordering_lookups > 0 ? (static_cast<double>(info_base.fhf) / info_base.ordering_lookups) * 100.0 : 0.0;
+        double fhf_opt = info_opt.ordering_lookups > 0 ? (static_cast<double>(info_opt.fhf) / info_opt.ordering_lookups) * 100.0 : 0.0;
+        
+        double cutoff_idx_base = info_base.cutoff_count_total > 0 ? (static_cast<double>(info_base.cutoff_index_sum) / info_base.cutoff_count_total) : 0.0;
+        double cutoff_idx_opt = info_opt.cutoff_count_total > 0 ? (static_cast<double>(info_opt.cutoff_index_sum) / info_opt.cutoff_count_total) : 0.0;
+        
+        double bf_base = depth > 0 ? std::pow(static_cast<double>(info_base.nodes), 1.0 / depth) : 0.0;
+        double bf_opt = depth > 0 ? std::pow(static_cast<double>(info_opt.nodes), 1.0 / depth) : 0.0;
+        
+        double tt_hit_base = info_base.tt_lookups > 0 ? (static_cast<double>(info_base.tt_hits) / info_base.tt_lookups) * 100.0 : 0.0;
+        double tt_hit_opt = info_opt.tt_lookups > 0 ? (static_cast<double>(info_opt.tt_hits) / info_opt.tt_lookups) * 100.0 : 0.0;
+        
+        double lmr_pct_base = info_base.nodes > 0 ? (static_cast<double>(info_base.lmr_usage) / info_base.nodes) * 100.0 : 0.0;
+        double lmr_pct_opt = info_opt.nodes > 0 ? (static_cast<double>(info_opt.lmr_usage) / info_opt.nodes) * 100.0 : 0.0;
+        
+        double nmp_pct_base = info_base.nodes > 0 ? (static_cast<double>(info_base.nmp_usage) / info_base.nodes) * 100.0 : 0.0;
+        double nmp_pct_opt = info_opt.nodes > 0 ? (static_cast<double>(info_opt.nmp_usage) / info_opt.nodes) * 100.0 : 0.0;
+        
+        double iid_pct_base = info_base.nodes > 0 ? (static_cast<double>(info_base.iid_usage) / info_base.nodes) * 100.0 : 0.0;
+        double iid_pct_opt = info_opt.nodes > 0 ? (static_cast<double>(info_opt.iid_usage) / info_opt.nodes) * 100.0 : 0.0;
+        
+        double mdp_pct_base = info_base.nodes > 0 ? (static_cast<double>(info_base.mdp_usage) / info_base.nodes) * 100.0 : 0.0;
+        double mdp_pct_opt = info_opt.nodes > 0 ? (static_cast<double>(info_opt.mdp_usage) / info_opt.nodes) * 100.0 : 0.0;
+
+        std::string move_stability = (info_base.best_move == info_opt.best_move) ? "STABLE" : "UNSTABLE";
+        
+        std::cout << "\n====================================================================\n"
+                  << "                     BENCHMARK COMPARISON REPORT                    \n"
+                  << "====================================================================\n"
+                  << std::left << std::setw(30) << "Metric" 
+                  << std::right << std::setw(15) << "Baseline" 
+                  << std::setw(15) << "Optimized" 
+                  << std::setw(15) << "Change %" << "\n"
+                  << "--------------------------------------------------------------------\n"
+                  << std::left << std::setw(30) << "Nodes Searched" 
+                  << std::right << std::setw(15) << info_base.nodes 
+                  << std::setw(15) << info_opt.nodes 
+                  << std::setw(14) << std::showpos << std::fixed << std::setprecision(1) << -node_reduction << "%" << "\n"
+                  << std::left << std::setw(30) << "Time (ms)" 
+                  << std::right << std::setw(15) << duration_base 
+                  << std::setw(15) << duration_opt 
+                  << std::setw(14) << -time_reduction << "%" << "\n"
+                  << std::noshowpos
+                  << std::left << std::setw(30) << "NPS" 
+                  << std::right << std::setw(15) << nps_base 
+                  << std::setw(15) << nps_opt 
+                  << std::setw(14) << std::fixed << std::setprecision(1) << (nps_base > 0 ? (static_cast<double>(nps_opt) - nps_base) / nps_base * 100.0 : 0.0) << "%" << "\n"
+                  << std::left << std::setw(30) << "Branching Factor" 
+                  << std::right << std::setw(15) << std::fixed << std::setprecision(2) << bf_base 
+                  << std::setw(15) << bf_opt 
+                  << std::setw(14) << (bf_base > 0 ? (bf_opt - bf_base) / bf_base * 100.0 : 0.0) << "%" << "\n"
+                  << std::left << std::setw(30) << "TT Hit Rate" 
+                  << std::right << std::setw(15) << std::fixed << std::setprecision(1) << tt_hit_base << "%" 
+                  << std::setw(14) << tt_hit_opt << "%" 
+                  << std::setw(14) << std::showpos << (tt_hit_opt - tt_hit_base) << "%" << "\n"
+                  << std::left << std::setw(30) << "LMR %" 
+                  << std::right << std::setw(15) << std::fixed << std::setprecision(2) << lmr_pct_base << "%" 
+                  << std::setw(14) << lmr_pct_opt << "%" 
+                  << std::setw(14) << std::showpos << (lmr_pct_opt - lmr_pct_base) << "%" << "\n"
+                  << std::left << std::setw(30) << "NMP %" 
+                  << std::right << std::setw(15) << std::fixed << std::setprecision(2) << nmp_pct_base << "%" 
+                  << std::setw(14) << nmp_pct_opt << "%" 
+                  << std::setw(14) << std::showpos << (nmp_pct_opt - nmp_pct_base) << "%" << "\n"
+                  << std::left << std::setw(30) << "IID %" 
+                  << std::right << std::setw(15) << std::fixed << std::setprecision(2) << iid_pct_base << "%" 
+                  << std::setw(14) << iid_pct_opt << "%" 
+                  << std::setw(14) << std::showpos << (iid_pct_opt - iid_pct_base) << "%" << "\n"
+                  << std::left << std::setw(30) << "MDP %" 
+                  << std::right << std::setw(15) << std::fixed << std::setprecision(2) << mdp_pct_base << "%" 
+                  << std::setw(14) << mdp_pct_opt << "%" 
+                  << std::setw(14) << std::showpos << (mdp_pct_opt - mdp_pct_base) << "%" << "\n"
+                  << std::left << std::setw(30) << "First Move Cutoff %" 
+                  << std::right << std::setw(15) << std::fixed << std::setprecision(1) << fhf_base 
+                  << std::setw(15) << fhf_opt 
+                  << std::setw(14) << std::showpos << (fhf_opt - fhf_base) << "%" << "\n"
+                  << std::left << std::setw(30) << "Avg Cutoff Move Index" 
+                  << std::right << std::setw(15) << std::fixed << std::setprecision(2) << cutoff_idx_base 
+                  << std::setw(15) << cutoff_idx_opt 
+                  << std::setw(14) << (cutoff_idx_opt - cutoff_idx_base) << "\n"
+                  << std::noshowpos
+                  << std::left << std::setw(30) << "Best Move" 
+                  << std::right << std::setw(15) << info_base.best_move.to_string() 
+                  << std::setw(15) << info_opt.best_move.to_string() 
+                  << std::setw(15) << move_stability << "\n"
+                  << std::left << std::setw(30) << "Evaluation Score" 
+                  << std::right << std::setw(15) << info_base.best_score 
+                  << std::setw(15) << info_opt.best_score 
+                  << std::setw(15) << "-" << "\n"
+                  << "--------------------------------------------------------------------\n"
+                  << "  Net Search Node Reduction: " << std::fixed << std::setprecision(1) << node_reduction << "%\n"
+                  << "====================================================================\n" << std::endl;
+
+        // Export JSON Heatmap Telemetry (Module 7 & 14)
+        std::ofstream json_file("search_heatmap.json");
+        if (json_file.is_open()) {
+            json_file << "{\n"
+                      << "  \"depth_distribution\": {\n"
+                      << "    \"target_depth\": " << depth << ",\n"
+                      << "    \"selective_depth\": " << depth << "\n"
+                      << "  },\n"
+                      << "  \"reductions\": {\n"
+                      << "    \"lmr_usage\": " << info_opt.lmr_usage << ",\n"
+                      << "    \"lmr_reductions\": " << info_opt.lmr_reductions << ",\n"
+                      << "    \"total_reduction_depth\": " << info_opt.total_reduction_depth << "\n"
+                      << "  },\n"
+                      << "  \"extensions\": {\n"
+                      << "    \"total_extension_depth\": " << info_opt.total_extension_depth << "\n"
+                      << "  },\n"
+                      << "  \"tt_usage\": {\n"
+                      << "    \"tt_lookups\": " << info_opt.tt_lookups << ",\n"
+                      << "    \"tt_hits\": " << info_opt.tt_hits << ",\n"
+                      << "    \"tt_exact_hits\": " << info_opt.tt_exact_hits << ",\n"
+                      << "    \"tt_lower_hits\": " << info_opt.tt_lower_hits << ",\n"
+                      << "    \"tt_upper_hits\": " << info_opt.tt_upper_hits << "\n"
+                      << "  },\n"
+                      << "  \"cutoffs\": {\n"
+                      << "    \"cutoffs\": " << info_opt.cutoffs << ",\n"
+                      << "    \"fhf\": " << info_opt.fhf << ",\n"
+                      << "    \"fhf_percentage\": " << fhf_opt << "\n"
+                      << "  },\n"
+                      << "  \"node_types\": {\n"
+                      << "    \"pv_nodes\": " << info_opt.pv_nodes_count << ",\n"
+                      << "    \"cut_nodes\": " << info_opt.cut_nodes_count << ",\n"
+                      << "    \"all_nodes\": " << info_opt.all_nodes_count << "\n"
+                      << "  },\n"
+                      << "  \"selectivity\": {\n"
+                      << "    \"nmp_usage\": " << info_opt.nmp_usage << ",\n"
+                      << "    \"iid_usage\": " << info_opt.iid_usage << ",\n"
+                      << "    \"mdp_usage\": " << info_opt.mdp_usage << ",\n"
+                      << "    \"mdp_prunings\": " << info_opt.mdp_prunings << ",\n"
+                      << "    \"iid_calls\": " << info_opt.iid_calls << ",\n"
+                      << "    \"iid_successes\": " << info_opt.iid_successes << "\n"
+                      << "  }\n"
+                      << "}\n";
+            json_file.close();
+            std::cout << "Exported search heatmap JSON to search_heatmap.json\n";
+        }
     }
     else {
         print_usage();

@@ -35,7 +35,7 @@ public:
     void clear();
     void resize(std::size_t size_mb);
 
-    bool probe(uint64_t key, int depth, int ply, int alpha, int beta, int& score, moves::Move& best_move);
+    bool probe(uint64_t key, int depth, int ply, int alpha, int beta, int& score, moves::Move& best_move, TTBound* out_bound = nullptr);
     void store(uint64_t key, int depth, int ply, int score, TTBound bound, const moves::Move& best_move);
 
     void increment_age() { age_++; }

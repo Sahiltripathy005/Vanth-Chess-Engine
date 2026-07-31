@@ -45,6 +45,10 @@ void dispatch_command(UCIEngine* engine, const std::string& line) {
     } else if (cmd == "ponderhit") {
         // Pondering infrastructure hook
         std::cout << "info string ponderhit received\n";
+    } else if (cmd == "search_profile") {
+        engine->handle_search_profile();
+    } else if (cmd == "benchmark_compare") {
+        engine->handle_benchmark_compare();
     }
 }
 

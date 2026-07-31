@@ -5,12 +5,26 @@
     "commit_hash": "dev",
     "search_config": "default",
     "eval_config": "default",
-    "elo": 1500,
-    "elo_error": 0,
-    "games": 0,
-    "wins": 0,
-    "losses": 0,
-    "draws": 0,
+    "elo": 1499.31,
+    "elo_error": 13.6673,
+    "games": 1000,
+    "wins": 200,
+    "losses": 202,
+    "draws": 598,
+    "date": "2026-07-11"
+  },
+  {
+    "name": "Vanth_Candidate",
+    "version": "3.5",
+    "commit_hash": "dev",
+    "search_config": "default",
+    "eval_config": "default",
+    "elo": 1500.69,
+    "elo_error": 13.6673,
+    "games": 1000,
+    "wins": 202,
+    "losses": 200,
+    "draws": 598,
     "date": "2026-07-11"
   }
 ]
